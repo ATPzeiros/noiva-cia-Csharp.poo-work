@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("noivaciaAPP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d96ea07ec80346730d064f20703c6e7e62064cfe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec936cae6b58b7f949efa730204fa9f7e89f6cea")]
 [assembly: System.Reflection.AssemblyProductAttribute("noivaciaAPP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("noivaciaAPP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
