@@ -1,0 +1,15 @@
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\bin\Debug\net8.0\noivaciaAPP.exe
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\bin\Debug\net8.0\noivaciaAPP.deps.json
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\bin\Debug\net8.0\noivaciaAPP.runtimeconfig.json
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\bin\Debug\net8.0\noivaciaAPP.dll
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\bin\Debug\net8.0\noivaciaAPP.pdb
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.GeneratedMSBuildEditorConfig.editorconfig
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.AssemblyInfoInputs.cache
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.AssemblyInfo.cs
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.csproj.CoreCompileInputs.cache
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.sourcelink.json
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.dll
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\refint\noivaciaAPP.dll
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.pdb
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\noivaciaAPP.genruntimeconfig.cache
+D:\minhas coisas\faculdade\1. materias\POO\noiv-cia.poo\noivaciaAPP\obj\Debug\net8.0\ref\noivaciaAPP.dll
