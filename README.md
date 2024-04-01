@@ -1,2 +1,3 @@
-# noiv-cia.poo
+# Noiva&Cia
+
 Trabalho de POO
