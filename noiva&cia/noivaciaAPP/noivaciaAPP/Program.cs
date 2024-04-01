@@ -1,0 +1,1 @@
+﻿//inicializaçao e finalizaçao do programa
