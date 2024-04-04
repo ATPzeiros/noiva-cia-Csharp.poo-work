@@ -5,9 +5,9 @@ class Espaco{
     private List<DateTime> Datas_Locadas {get; set;}
 
     public Espaco(string nome, int capacit){
-        this.Nome = nome;
-        this.Capacidade = capacit;
-        this.Locado = false;
-        this.Datas_Locadas = new List<DateTime>();
+        Nome = nome;
+        Capacidade = capacit;
+        Locado = false;
+        Datas_Locadas = new List<DateTime>();
     }
 }
