@@ -5,7 +5,7 @@ class GerenciadorEspaco {
     private Calendario Calendario;
     public GerenciadorEspaco() {
         Lista_espacos = new List<Espaco>(){
-            new Espaco("g", 50, EspacoTipoEnum.MAX50),
+            new Espaco("g", 50,  EspacoTipoEnum.MAX50 ),
             new Espaco("a", 100, EspacoTipoEnum.MAX100),
             new Espaco("b", 100, EspacoTipoEnum.MAX100),
             new Espaco("c", 100, EspacoTipoEnum.MAX100),

@@ -6,11 +6,11 @@ class Espaco {
 
     public EspacoTipoEnum Tipo {get;set;}
 
-    public Espaco(string nome, int capacit, EspacoTipoEnum tipo){
-        Nome = nome;
-        Capacidade = capacit;
+    public Espaco(string Nome, int Capacidade, EspacoTipoEnum Tipo){
+        this.Nome = Nome;
+        this.Capacidade = Capacidade;
+        this.Tipo = Tipo;
         Locado = false;
         Datas_Locadas = new List<DateTime>();
-        Tipo = tipo;
     }
 }

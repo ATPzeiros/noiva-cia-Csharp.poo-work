@@ -5,7 +5,6 @@ class Calendario{
     //      True --> Ele quebra o loop e retorna a data recebida.
     //      False --> Pega a data que foi recebida e acrescenta 1 dia a ela .
     //Retorno: Uma data correspondente a um sexta ou sabado.
-    
     private DateTime FindNext_fridayORsaturday(DateTime date){
         while(true){
             if(date.DayOfWeek == DayOfWeek.Friday || date.DayOfWeek == DayOfWeek.Saturday){
