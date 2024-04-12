@@ -396,3 +396,25 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+noivaciaAPP/noivaciaAPP.csproj
+noivaciaAPP/bin/Debug/net8.0/noivaciaAPP.dll
+noivaciaAPP/bin/Debug/net8.0/noivaciaAPP.exe
+noivaciaAPP/bin/Debug/net8.0/noivaciaAPP.pdb
+noivaciaAPP/obj/noivaciaAPP.csproj.nuget.dgspec.json
+noivaciaAPP/obj/noivaciaAPP.csproj.nuget.g.props
+noivaciaAPP/obj/noivaciaAPP.csproj.nuget.g.targets
+noivaciaAPP/obj/project.assets.json
+noivaciaAPP/obj/project.nuget.cache
+noivaciaAPP/obj/Debug/net8.0/apphost.exe
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.AssemblyInfo.cs
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.AssemblyInfoInputs.cache
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.assets.cache
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.csproj.CoreCompileInputs.cache
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.csproj.FileListAbsolute.txt
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.dll
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.GeneratedMSBuildEditorConfig.editorconfig
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.genruntimeconfig.cache
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.pdb
+noivaciaAPP/obj/Debug/net8.0/noivaciaAPP.sourcelink.json
+noivaciaAPP/obj/Debug/net8.0/ref/noivaciaAPP.dll
+noivaciaAPP/obj/Debug/net8.0/refint/noivaciaAPP.dll

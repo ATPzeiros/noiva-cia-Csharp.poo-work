@@ -5,5 +5,9 @@
 // GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
 // Espaco espaco = gerenciadorEspaco.ReservarEspaco(60);
 
-CalendarioTeste.QuandoProxDate_DeveRetornarDataAtualCom30Dias();
-CalendarioTeste.QuandoProxDate_DeveRetornarIntervaloMaiorQue30Dias();
+//CalendarioTeste.QuandoProxDate_DeveRetornarDataAtualCom30Dias();
+//CalendarioTeste.QuandoProxDate_DeveRetornarIntervaloMaiorQue30Dias();
+
+var clientes = Database.GetClientes();
+
+Console.WriteLine(clientes.Rows[0]["email"]);
