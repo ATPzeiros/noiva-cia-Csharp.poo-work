@@ -5,14 +5,14 @@ class GerenciadorEspaco {
     private Calendario Calendario;
     public GerenciadorEspaco() {
         Lista_espacos = new List<Espaco>(){
-            new Espaco("g", 50,  EspacoTipoEnum.MAX50 ),
-            new Espaco("a", 100, EspacoTipoEnum.MAX100),
-            new Espaco("b", 100, EspacoTipoEnum.MAX100),
-            new Espaco("c", 100, EspacoTipoEnum.MAX100),
-            new Espaco("d", 100, EspacoTipoEnum.MAX100),
-            new Espaco("e", 200, EspacoTipoEnum.MAX200),
-            new Espaco("f", 200, EspacoTipoEnum.MAX200),
-            new Espaco("h", 500, EspacoTipoEnum.MAX500),
+            new Espaco("g", 50,  8000  , EspacoTipoEnum.MAX50 ),
+            new Espaco("a", 100, 10000 , EspacoTipoEnum.MAX100),
+            new Espaco("b", 100, 10000 , EspacoTipoEnum.MAX100),
+            new Espaco("c", 100, 10000 , EspacoTipoEnum.MAX100),
+            new Espaco("d", 100, 10000 , EspacoTipoEnum.MAX100),
+            new Espaco("e", 200, 17000 , EspacoTipoEnum.MAX200),
+            new Espaco("f", 200, 17000 , EspacoTipoEnum.MAX200),
+            new Espaco("h", 500, 35000 , EspacoTipoEnum.MAX500),
         };
 
         Lista_espacos[1].Datas_Locadas.Add(DateTime.Today.AddDays(30));
@@ -20,8 +20,8 @@ class GerenciadorEspaco {
         Calendario = new Calendario(); 
     }
 
-    public List<Espaco> EncontrarEspacos(int qntConvidados) {
-        Espaco? espacoComCapacidade = Lista_espacos.Find(espaco => espaco.Capacidade >= qntConvidados && qntConvidados > 0);
+    private List<Espaco> EncontrarEspacos(int qntConvidados) {
+        Espaco? espacoComCapacidade = Lista_espacos.Find(espaco => espaco.CapacidadeMax >= qntConvidados && qntConvidados > 0);
         return Lista_espacos.FindAll(espaco => espacoComCapacidade?.Tipo == espaco.Tipo);
     }
 
@@ -36,6 +36,7 @@ class GerenciadorEspaco {
 
             if(!espacoLocado){
                 espaco.Datas_Locadas.Add(possivelData);
+                espaco.qntConvidados =qntConvidados;
                 return espaco;
             } else {
                 if(i % espacosComCapacidade.Count == 0 && i != 0){

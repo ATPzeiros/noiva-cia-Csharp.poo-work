@@ -1,32 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\c#\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj": {}
+    "C:\\Users\\Serafim\\Desktop\\FACULDADE - PUC MINAS\\Terceiro Semestre\\POO\\Trabalhos\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj": {}
   },
   "projects": {
-    "D:\\c#\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj": {
+    "C:\\Users\\Serafim\\Desktop\\FACULDADE - PUC MINAS\\Terceiro Semestre\\POO\\Trabalhos\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\c#\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
+        "projectUniqueName": "C:\\Users\\Serafim\\Desktop\\FACULDADE - PUC MINAS\\Terceiro Semestre\\POO\\Trabalhos\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
         "projectName": "noivaciaAPP",
-        "projectPath": "D:\\c#\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
-        "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
-        "outputPath": "D:\\c#\\noiva-cia.poo\\noivaciaAPP\\obj\\",
+        "projectPath": "C:\\Users\\Serafim\\Desktop\\FACULDADE - PUC MINAS\\Terceiro Semestre\\POO\\Trabalhos\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
+        "packagesPath": "C:\\Users\\Serafim\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Serafim\\Desktop\\FACULDADE - PUC MINAS\\Terceiro Semestre\\POO\\Trabalhos\\noiva-cia.poo\\noivaciaAPP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Serafim\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -34,16 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "System.Data.SQLite": {
               "target": "Package",
@@ -66,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

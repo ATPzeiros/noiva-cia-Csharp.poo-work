@@ -8,6 +8,14 @@
 //CalendarioTeste.QuandoProxDate_DeveRetornarDataAtualCom30Dias();
 //CalendarioTeste.QuandoProxDate_DeveRetornarIntervaloMaiorQue30Dias();
 
-var clientes = Database.GetClientes();
+//var clientes = Database.GetClientes();
 
-Console.WriteLine(clientes.Rows[0]["email"]);
+//Console.WriteLine(clientes.Rows[0]["email"]);
+
+GerenciadorEspaco gerenciaEspaco = new GerenciadorEspaco();
+GerenciadorDeItem gerenciaItem = new GerenciadorDeItem();
+int qtd = 50;
+Casamento Casamento = new Casamento(gerenciaEspaco.ReservarEspaco(qtd), CasamentoTipoEnum.STANDART, gerenciaItem.getStandartList());
+Console.WriteLine(Casamento.EspacoCasamento.Nome);
+
+Console.WriteLine(Casamento.ValorTotalCasamento());
