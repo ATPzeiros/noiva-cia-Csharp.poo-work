@@ -58,5 +58,11 @@ class GerenciadorDeItem{
     }
     public List<ItemCasamento> getStandartList(){
             return ListaDeItemsStandart;
-        }
+    }
+    public List<ItemCasamento> getLuxoList(){
+            return ListaDeItemsLuxo;
+    }
+    public List<ItemCasamento> getPremierList(){
+            return ListaDeItemsPremier;
+    }
 }

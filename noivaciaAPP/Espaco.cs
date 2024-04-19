@@ -1,8 +1,8 @@
 public class Espaco: EspacoBase {
-    public double qntConvidados {get; set;}
+    public int qntConvidados {get; set;}
     public List<DateTime> Datas_Locadas {get; set;}
 
-    public Espaco(string Nome, int CapacidadeMax, double Valor, EspacoTipoEnum Tipo){
+    public Espaco(string Nome, int CapacidadeMax, int Valor, EspacoTipoEnum Tipo){
         this.Nome = Nome;
         this.CapacidadeMax = CapacidadeMax;
         this.Valor = Valor;
