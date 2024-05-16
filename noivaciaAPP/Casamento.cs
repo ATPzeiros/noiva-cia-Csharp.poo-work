@@ -21,7 +21,7 @@ public class Casamento  {
                  Console.WriteLine(i.Name);
                  i.QuantidadeDoItem=int.Parse(Console.ReadLine());
             }
-        }    
+        }
     }
 
     public double ValorTotalCasamento(){
@@ -36,7 +36,7 @@ public class Casamento  {
          List<ItemCasamento> listaComidas= ItemsDoCasamento.FindAll(item =>item?.TipoItem == ItemTipoEnum.COMIDA);
          foreach (var item in listaComidas){
              PrecoFinalCasamento += item.Value * EspacoCasamento.qntConvidados;
-        } 
+        }
 
         PrecoFinalCasamento += EspacoCasamento.Valor;
         return PrecoFinalCasamento;
