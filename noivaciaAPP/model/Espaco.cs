@@ -1,3 +1,5 @@
+using NoivaPoo;
+
 public class Espaco: EspacoBase {
     public int qntConvidados {get; set;}
     public List<DateTime> Datas_Locadas {get; set;}
