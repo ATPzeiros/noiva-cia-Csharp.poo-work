@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 class GerenciadorEspaco {
     private List<Espaco> Lista_espacos {get; set;}
     private Calendario Calendario;
