@@ -1,9 +1,13 @@
-using System.Security.Cryptography.X509Certificates;
+using NoivaPoo;
+using SQLite;
 
-class GerenciadorDeItem{
+class GerenciadorDeItem {
     private List<ItemCasamento> ListaDeItemsStandart { get; set; }
     private List<ItemCasamento> ListaDeItemsLuxo { get; set; }
     private List<ItemCasamento> ListaDeItemsPremier { get; set; }
+
+    private ItemCasamentoRepository repository;
+
     public GerenciadorDeItem()
     {
          ListaDeItemsStandart = new List<ItemCasamento>(){
@@ -55,6 +59,8 @@ class GerenciadorDeItem{
             new ItemCasamento("Espumante Nacional (750 ml)", 80, CasamentoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
             new ItemCasamento("Espumante Importado (750 ml)", 140, CasamentoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
         };
+
+        repository = RepositoryInjector.CreateItemCasamentoRepository();
     }
     public List<ItemCasamento> getStandartList(){
             return ListaDeItemsStandart;
@@ -64,5 +70,13 @@ class GerenciadorDeItem{
     }
     public List<ItemCasamento> getPremierList(){
             return ListaDeItemsPremier;
+    }
+
+    public bool SaveItem(ItemCasamento item){
+        return repository.SaveItemCasamento(item);
+    }
+
+    public List<ItemCasamento> GetItemCasamentoLuxo(){
+        return repository.GetItemCasamentoPorTipo(CasamentoTipoEnum.LUXO);
     }
 }

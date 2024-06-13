@@ -34,7 +34,7 @@ class GerenciadorEspaco {
 
             if(!espacoLocado){
                 espaco.Datas_Locadas.Add(possivelData);
-                espaco.qntConvidados =qntConvidados;
+                espaco.qntConvidados = qntConvidados;
                 return espaco;
             } else {
                 if(i % espacosComCapacidade.Count == 0 && i != 0){

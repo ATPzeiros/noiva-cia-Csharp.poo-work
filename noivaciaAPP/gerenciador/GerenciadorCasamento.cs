@@ -1,3 +1,5 @@
+using NoivaPoo;
+
 class GerenciadorCasamento
 {
     public static void MarcarCasamento(){
@@ -8,7 +10,7 @@ class GerenciadorCasamento
     }
     public static Espaco pegarEspaco(){
         Console.WriteLine("Quantas Pessoas Vão ao seu Casamento?");
-        int qtdPessoas = int.Parse(Console.ReadLine());
+        int qtdPessoas = int.Parse(Console.ReadLine() ?? "0");
         GerenciadorEspaco gerenciadorEspaco= new GerenciadorEspaco();
         Espaco espaco = gerenciadorEspaco.ReservarEspaco(qtdPessoas);
         return espaco;
@@ -19,7 +21,7 @@ class GerenciadorCasamento
         Console.WriteLine("Qual o tipo do seu Casamento?");
         int op = 0;
         do{
-            op = int.Parse(Console.ReadLine());
+            op = int.Parse(Console.ReadLine() ?? "0");
             Console.WriteLine("1 - STANDART");
             Console.WriteLine("2 - LUXO");
             Console.WriteLine("3 - PREMIER");
