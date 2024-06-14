@@ -1,7 +1,3 @@
-using NoivaPoo;
-using NoivaCiaApp.repository;
-using SQLite;
-using NoivaCiaApp.mapper;
 using NoivaCiaApp.model;
 
 namespace noivaciaAPP.Test
@@ -18,7 +14,8 @@ namespace noivaciaAPP.Test
         [Test]
         public void Test1()
         {
-            Assert.That(false, Is.False);
+            var a = 1;
+            Assert.That(a, Is.Not.EqualTo(2));
         }
     }
 }

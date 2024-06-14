@@ -1,5 +1,4 @@
 using NoivaCiaApp.model;
-using NoivaPoo;
 
 namespace noivaciaAPP.Test
 {
