@@ -1,4 +1,4 @@
-namespace NoivaPoo
+namespace NoivaCiaApp.model
 {
     public class ItemCasamento
     {

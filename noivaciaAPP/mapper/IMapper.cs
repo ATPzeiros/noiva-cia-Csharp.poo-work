@@ -1,5 +1,12 @@
-interface IMapper<T, R>{
-    public T MapToModel(R item);
+using NoivaCiaApp.entity;
 
-    public R MapToEntity(T item);
+namespace NoivaCiaApp.mapper
+{
+    public interface IMapper<T, R> where R: Entity
+    {
+        public T MapToModel(R item);
+
+        public R MapToEntity(T item);
+    }
 }
+

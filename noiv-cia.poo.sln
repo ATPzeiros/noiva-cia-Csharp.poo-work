@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "noivaciaAPP", "noivaciaAPP\noivaciaAPP.csproj", "{E15D709D-57EA-42B7-BBFB-9908183765FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "noivaciaAPP.Test", "noivaciaAPP.Test\noivaciaAPP.Test.csproj", "{9C4BAA0C-E8EF-43D7-9282-AF64FE040DD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E15D709D-57EA-42B7-BBFB-9908183765FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E15D709D-57EA-42B7-BBFB-9908183765FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E15D709D-57EA-42B7-BBFB-9908183765FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C4BAA0C-E8EF-43D7-9282-AF64FE040DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C4BAA0C-E8EF-43D7-9282-AF64FE040DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C4BAA0C-E8EF-43D7-9282-AF64FE040DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C4BAA0C-E8EF-43D7-9282-AF64FE040DD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

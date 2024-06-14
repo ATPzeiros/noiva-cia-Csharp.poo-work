@@ -1,39 +1,39 @@
-using NoivaPoo;
-using SQLite;
+using NoivaCiaApp.entity;
+using NoivaCiaApp.mapper;
+using NoivaCiaApp.model;
+using NoivaCiaApp.persistence;
 
-class ItemCasamentoRepository
+namespace NoivaCiaApp.repository
 {
-
-    private readonly IMapper<ItemCasamento, ItemFestaEntity> mapper;
-    private readonly SQLiteConnection database;
-
-    public ItemCasamentoRepository(IMapper<ItemCasamento, ItemFestaEntity> mapper, SQLiteConnection database)
+    public class ItemCasamentoRepository
     {
-        this.mapper = mapper;
-        this.database = database;
-    }
 
-    public bool SaveItemCasamento(ItemCasamento item)
-    {
-        var entity = mapper?.MapToEntity(item);
-        database.CreateTable<ItemFestaEntity>();
-        return database?.Insert(entity) > 0;
-    }
+        private readonly IMapper<ItemCasamento, ItemFestaEntity> mapper;
+        private readonly IDatabase database;
 
-    public List<ItemCasamento> GetItemCasamentoPorTipo(CasamentoTipoEnum tipo)
-    {
-        try
-        {
-            return database
-                .Table<ItemFestaEntity>()
-                .Where(item => item.TipoCasamento == (int)tipo)
-                .Select(item => mapper?.MapToModel(item))
-                .OfType<ItemCasamento>()
-                .ToList();
+        public ItemCasamentoRepository(
+            IMapper<ItemCasamento, ItemFestaEntity> mapper, 
+            IDatabase database
+        ) {
+            this.mapper = mapper;
+            this.database = database;
         }
-        catch
+
+        public List<ItemCasamento> GetItemCasamentoPorTipo(CasamentoTipoEnum tipo)
         {
-            return new List<ItemCasamento>();
+            try
+            {
+                return database
+                    .GetEntities<ItemFestaEntity>()
+                    .Where(item => item.TipoCasamento == (int)tipo)
+                    .Select(item => mapper?.MapToModel(item))
+                    .OfType<ItemCasamento>()
+                    .ToList();
+            }
+            catch
+            {
+                return new List<ItemCasamento>();
+            }
         }
     }
 }

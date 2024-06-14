@@ -1,3 +1,5 @@
+using NoivaCiaApp.model;
+using NoivaCiaApp.repository;
 using NoivaPoo;
 using SQLite;
 
@@ -72,11 +74,11 @@ class GerenciadorDeItem {
             return ListaDeItemsPremier;
     }
 
-    public bool SaveItem(ItemCasamento item){
-        return repository.SaveItemCasamento(item);
-    }
-
     public List<ItemCasamento> GetItemCasamentoLuxo(){
         return repository.GetItemCasamentoPorTipo(CasamentoTipoEnum.LUXO);
     }
+
+    public List<ItemCasamento> GetItemPorTipo(CasamentoTipoEnum tipo){
+        return repository.GetItemCasamentoPorTipo(tipo);
+    } 
 }

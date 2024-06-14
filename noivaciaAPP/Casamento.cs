@@ -1,3 +1,4 @@
+using NoivaCiaApp.model;
 using NoivaPoo;
 
 public class Casamento  {
