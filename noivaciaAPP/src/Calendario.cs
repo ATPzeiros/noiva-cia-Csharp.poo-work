@@ -1,4 +1,4 @@
-class Calendario{
+public class Calendario{
 
     //Objetivo: Recebe uma data qualquer que será definida ao longo do sistema ->
     //  Logo em seguida faz uma verificaçao para saber se o dia que receber é igual a sexta ou sabado ->

@@ -1,5 +1,4 @@
 ﻿using System.Media;
-using NoivaPoo;
 
 namespace NoivaCiaApp
 {
@@ -64,7 +63,7 @@ namespace NoivaCiaApp
                         else if (posicaoAtual == 3)
                         {
                             Console.WriteLine("Fechando o sistema...");
-                            SoundPlayer player = new SoundPlayer(Directory.GetCurrentDirectory() + "/sound/win-shutdown.wav");
+                            SoundPlayer player = new SoundPlayer(Directory.GetCurrentDirectory() + "/src/sound/win-shutdown.wav");
                             player.PlaySync();
                             op = -1;
                         }
@@ -117,26 +116,3 @@ namespace NoivaCiaApp
         }
     }
 }
-
-//INICIALIZAÇAO E FINALIZAÇAO DO PROGRAMA 
-
-
-// Calendario cal = new Calendario();
-// Console.WriteLine(cal.Prox_date());
-// Console.WriteLine(cal.Prox_date(cal.Prox_date()));
-// GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
-// Espaco espaco = gerenciadorEspaco.ReservarEspaco(60);
-
-//CalendarioTeste.QuandoProxDate_DeveRetornarDataAtualCom30Dias();
-//CalendarioTeste.QuandoProxDate_DeveRetornarIntervaloMaiorQue30Dias();
-
-//var clientes = Database.GetClientes();
-
-//Console.WriteLine(clientes.Rows[0]["email"]);
-
-//GerenciadorEspaco gerenciaEspaco = new GerenciadorEspaco();
-//GerenciadorDeItem gerenciaItem = new GerenciadorDeItem();
-// int qtd = 50;
-// Console.WriteLine(Casamento.EspacoCasamento.Nome);
-
-// Console.WriteLine(Casamento.ValorTotalCasamento());

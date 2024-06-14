@@ -1,6 +1,6 @@
 namespace NoivaCiaApp.model
 {
-    public class ItemCasamento
+    public class ItemCasamento: Model
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -1,7 +1,5 @@
 using NoivaCiaApp.model;
 using NoivaCiaApp.repository;
-using NoivaPoo;
-using SQLite;
 
 class GerenciadorDeItem {
     private List<ItemCasamento> ListaDeItemsStandart { get; set; }

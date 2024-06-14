@@ -1,6 +1,6 @@
-namespace NoivaPoo
+namespace NoivaCiaApp.model
 {
-  public class EspacoBase
+  public class EspacoBase: Model
   {
     public string? Nome { get; set; }
     public int CapacidadeMax { get; set; }
