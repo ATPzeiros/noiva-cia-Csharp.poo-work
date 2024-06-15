@@ -1,0 +1,5 @@
+@startuml
+interface IDatabase {
+    + GetEntities() : List<T>
+}
+@enduml

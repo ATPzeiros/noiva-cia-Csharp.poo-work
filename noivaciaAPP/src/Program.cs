@@ -1,4 +1,6 @@
 ﻿using System.Media;
+using noivaCiaApp.gerenciador;
+using NoivaCiaApp.model;
 
 namespace NoivaCiaApp
 {
@@ -44,7 +46,88 @@ namespace NoivaCiaApp
                     {
                         if (posicaoAtual == 0)
                         {
-                            GerenciadorCasamento.MarcarCasamento();
+                            Console.WriteLine("INICIAR PROCESSO DE LOCACAO DE ESPACO (ESCOLHA DO ESPACO)");
+                            NewGerenciadorEspaco gEspaco = new(
+                                repository: RepositoryInjector.CreateEspacoRepository(),
+                                calendario: new Calendario()
+                            );
+
+                            Console.WriteLine("Espaco para quantas pessoas?");
+                            int qntPessoas = int.Parse(Console.ReadLine() ?? "0");
+                            Locacao loc = gEspaco.SelecionarEspaco(qntPessoas);
+                            Console.WriteLine("Espaco encontrado: " + loc.Espaco.Nome);
+                            Console.WriteLine("Data: " + loc.Date.ToShortDateString());
+                            Console.ReadKey();
+
+                            Console.WriteLine("ESCOLHA A **CATEGORIA** DA SUA FESTA");
+                            
+                            Enum
+                            .GetValues<CategoriaFesta>()
+                            .ToList()
+                            .ForEach(tipo => Console.WriteLine(tipo));
+
+                            CategoriaFesta categoria = (CategoriaFesta)int.Parse(Console.ReadLine() ?? "0");
+
+                            Console.ReadKey();
+
+                            Console.WriteLine("ESCOLHA O **TIPO** DA SUA FESTA");
+                            NewGerenciadorItems gItem = new(
+                                repository: RepositoryInjector.CreateItemCasamentoRepository()
+                            );
+
+                            Enum
+                            .GetValues<CasamentoTipoEnum>()
+                            .Select((tipo, i) => new {index = i, item = tipo})
+                            .ToList()
+                            .ForEach(tipo => Console.WriteLine(tipo.index + " - " + tipo.item));
+
+                            CasamentoTipoEnum tipo = (CasamentoTipoEnum)int.Parse(Console.ReadLine() ?? "0");
+
+                            Console.WriteLine(tipo);
+                            Console.WriteLine(categoria);
+
+                            Console.ReadKey();
+
+                            Console.WriteLine("ESCOLHA DOS ITEMS");
+                            Console.WriteLine("ITEMS DE SERVICO BASICO OBRIGATORIOS PARA SUA FESTA:");
+                            Console.WriteLine("===========");
+                            var itemsBasico = gItem.GetItemsServicoBasico(ItemTipoEnum.BASICO, CategoriaFesta.CASAMENTO, CasamentoTipoEnum.LUXO);
+                            Console.WriteLine("===========");
+
+                            Console.WriteLine("\nITEMS DE SERVICO COMIDA:");
+                            Console.WriteLine("===========");
+                            var itemsComida = gItem.GetItemsFestaPorTipo(ItemTipoEnum.COMIDA, CasamentoTipoEnum.LUXO);
+                            Console.WriteLine("===========");
+
+                            Console.WriteLine("\nITEMS DE SERVICO BEBIDA:");
+                            Console.WriteLine("===========");
+                            var bebidas = gItem
+                                .GetItemsFestaPorTipo(ItemTipoEnum.BEBIDA, CasamentoTipoEnum.LUXO)
+                                .Select(item => {
+                                    Console.WriteLine("Selecione a quantidade de " + item.Name);
+                                    int qnt = int.Parse(Console.ReadLine() ?? "0");
+                                    Console.WriteLine($">>>>>>>>{qnt}");
+                                    return new ItemComQuantidade(Item: item , Quantidade: qnt);
+                                }).ToList();
+
+                            bebidas.ForEach(item => Console.WriteLine(item.Quantidade));
+                            
+                            Console.WriteLine("===========");
+                            Console.ReadKey();
+
+                            Console.WriteLine("\nREVISE A MARCAO DO EVENTO");
+                            GerenciadorFesta gFesta = new(
+                                repository: RepositoryInjector.CreateFestaRepository()
+                            );
+                            Festa festa = new(
+                                TipoFesta: tipo,
+                                Locacao: loc, 
+                                ItemsObrigatorios: itemsBasico.Concat(itemsComida).ToList(), 
+                                ItemsSelecionaveis: bebidas
+                            );
+                            
+                            Console.WriteLine(gFesta.ResumoDaFesta(festa));
+                            Console.ReadKey();
                         }
                         else if (posicaoAtual == 1)
                         {

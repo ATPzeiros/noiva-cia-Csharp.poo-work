@@ -1,0 +1,9 @@
+@startuml
+class ItemCasamentoMapper {
+    + MapToModel(entity:ItemFestaEntity) : ItemCasamento
+    + MapToEntity(itemCasamento:ItemCasamento) : ItemFestaEntity
+}
+class "IMapper`2"<T1,T2> {
+}
+"IMapper`2" "<ItemCasamento,ItemFestaEntity>" <|-- ItemCasamentoMapper
+@enduml

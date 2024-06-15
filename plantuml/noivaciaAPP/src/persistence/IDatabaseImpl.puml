@@ -1,0 +1,7 @@
+@startuml
+class IDatabaseImpl {
+    + IDatabaseImpl()
+    + GetEntities() : List<T>
+}
+IDatabase <|-- IDatabaseImpl
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class ItemCasamentoStub <<static>> {
+    + {static} GenerateItemCasamento() : ItemCasamento
+    + {static} GenerateItemCasamentoEntity() : ItemFestaEntity
+}
+@enduml

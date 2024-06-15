@@ -17,5 +17,7 @@ namespace NoivaCiaApp.entity
         public int TipoCasamento { get; set; }
         [Column("tipoItem")]
         public int TipoItem { get; set; }
+        [Column("tipoServico")]
+        public int? TipoServico { get; set; } = null;
     }
 }

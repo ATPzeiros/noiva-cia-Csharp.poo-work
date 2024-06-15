@@ -1,0 +1,13 @@
+@startuml
+class ItemCasamento {
+    + Id : int <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Price : float <<get>> <<set>>
+    + QuantidadeDoItem : int <<get>> <<set>>
+    + ItemCasamento(Name:string, Value:float, TipoCasamento:CasamentoTipoEnum, TipoItem:ItemTipoEnum)
+    + ItemCasamento(Id:int, Name:string, Value:float, TipoCasamento:CasamentoTipoEnum, TipoItem:ItemTipoEnum)
+}
+Model <|-- ItemCasamento
+ItemCasamento --> "TipoCasamento" CasamentoTipoEnum
+ItemCasamento --> "TipoItem" ItemTipoEnum
+@enduml

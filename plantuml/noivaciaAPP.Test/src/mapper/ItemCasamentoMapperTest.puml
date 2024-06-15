@@ -1,0 +1,7 @@
+@startuml
+class ItemCasamentoMapperTest {
+    + Setup() : void
+    + WhenMappingEntityToModelItShouldHaveSameProperties() : void
+    + WhenMappingModelToEntityItShouldHaveSameProperties() : void
+}
+@enduml

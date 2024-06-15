@@ -1,0 +1,6 @@
+@startuml
+interface "IMapper`2"<T,R> {
+    + MapToModel(item:R) : T
+    + MapToEntity(item:T) : R
+}
+@enduml

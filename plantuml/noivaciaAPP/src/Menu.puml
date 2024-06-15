@@ -1,0 +1,6 @@
+@startuml
+class Menu {
+    + {static} MostrarMenu(opcoes:string[], posicao:int, cabecalho:string) : void
+    + {static} ShowMenuLogo() : void
+}
+@enduml

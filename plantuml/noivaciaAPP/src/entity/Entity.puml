@@ -1,0 +1,5 @@
+@startuml
+abstract class Entity {
+    {abstract} + Id : int <<get>> <<set>>
+}
+@enduml

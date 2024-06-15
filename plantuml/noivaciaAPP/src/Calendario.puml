@@ -1,0 +1,6 @@
+@startuml
+class Calendario {
+    + Prox_date() : DateTime
+    + Prox_date(date:DateTime) : DateTime
+}
+@enduml

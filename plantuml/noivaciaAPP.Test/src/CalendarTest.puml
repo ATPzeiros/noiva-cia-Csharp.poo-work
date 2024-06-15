@@ -1,0 +1,6 @@
+@startuml
+class CalendarTest {
+    + {static} QuandoProxDate_DeveRetornarDataAtualCom30Dias() : void
+    + {static} QuandoProxDate_DeveRetornarIntervaloMaiorQue30Dias() : void
+}
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class DatabaseConnection <<static>> {
+    + {static} GetDatabase() : SQLiteConnection
+}
+@enduml

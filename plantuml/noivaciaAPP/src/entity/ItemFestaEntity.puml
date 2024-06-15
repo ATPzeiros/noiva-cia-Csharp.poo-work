@@ -1,0 +1,10 @@
+@startuml
+class ItemFestaEntity {
+    + <<override>> Id : int <<get>> <<set>>
+    + Name : string? <<get>> <<set>>
+    + Value : float <<get>> <<set>>
+    + TipoCasamento : int <<get>> <<set>>
+    + TipoItem : int <<get>> <<set>>
+}
+Entity <|-- ItemFestaEntity
+@enduml

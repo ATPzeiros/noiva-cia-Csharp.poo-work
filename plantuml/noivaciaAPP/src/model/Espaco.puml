@@ -1,0 +1,10 @@
+@startuml
+class Espaco {
+    + qntConvidados : int <<get>> <<set>>
+    + Espaco(Nome:string, CapacidadeMax:int, Valor:int, Tipo:EspacoTipoEnum)
+}
+class "List`1"<T> {
+}
+EspacoBase <|-- Espaco
+Espaco --> "Datas_Locadas<DateTime>" "List`1"
+@enduml

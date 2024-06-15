@@ -1,0 +1,10 @@
+@startuml
+class GerenciadorDeItem {
+    + GerenciadorDeItem(repository:ItemCasamentoRepository)
+    + getStandartList() : List<ItemCasamento>
+    + getLuxoList() : List<ItemCasamento>
+    + getPremierList() : List<ItemCasamento>
+    + GetItemCasamentoLuxo() : List<ItemCasamento>
+    + GetItemPorTipo(tipo:CasamentoTipoEnum) : List<ItemCasamento>
+}
+@enduml

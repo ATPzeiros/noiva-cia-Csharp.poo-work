@@ -1,0 +1,5 @@
+@startuml
+class RepositoryInjector <<static>> {
+    + {static} CreateItemCasamentoRepository() : ItemCasamentoRepository
+}
+@enduml

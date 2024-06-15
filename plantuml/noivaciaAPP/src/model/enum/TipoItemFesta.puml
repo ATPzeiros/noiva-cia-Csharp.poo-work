@@ -1,0 +1,7 @@
+@startuml
+enum ItemTipoEnum {
+    COMIDA= 1,
+    BEBIDA= 2,
+    BASICO= 3,
+}
+@enduml

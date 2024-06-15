@@ -42,7 +42,7 @@ class GerenciadorCasamento
     }
     
     public static List<ItemCasamento> PegarListaCasamento(CasamentoTipoEnum TipoCasamento){
-        GerenciadorDeItem items = new GerenciadorDeItem();
+        GerenciadorDeItem items = new GerenciadorDeItem(RepositoryInjector.CreateItemCasamentoRepository());
         List<ItemCasamento> Lista = new List<ItemCasamento>();
         if(TipoCasamento == CasamentoTipoEnum.STANDART){
             Lista = items.getStandartList();

@@ -1,0 +1,9 @@
+@startuml
+class EspacoBase {
+    + Nome : string? <<get>> <<set>>
+    + CapacidadeMax : int <<get>> <<set>>
+    + Valor : int <<get>> <<set>>
+}
+Model <|-- EspacoBase
+EspacoBase --> "Tipo" EspacoTipoEnum
+@enduml

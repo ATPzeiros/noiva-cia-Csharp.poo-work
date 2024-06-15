@@ -6,9 +6,9 @@ class GerenciadorDeItem {
     private List<ItemCasamento> ListaDeItemsLuxo { get; set; }
     private List<ItemCasamento> ListaDeItemsPremier { get; set; }
 
-    private ItemCasamentoRepository repository;
+    private readonly ItemCasamentoRepository repository;
 
-    public GerenciadorDeItem()
+    public GerenciadorDeItem(ItemCasamentoRepository repository)
     {
          ListaDeItemsStandart = new List<ItemCasamento>(){
             new ItemCasamento("Itens de Mesa", 50, CasamentoTipoEnum.STANDART, ItemTipoEnum.BASICO ),
@@ -60,7 +60,7 @@ class GerenciadorDeItem {
             new ItemCasamento("Espumante Importado (750 ml)", 140, CasamentoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
         };
 
-        repository = RepositoryInjector.CreateItemCasamentoRepository();
+        this.repository = repository;
     }
     public List<ItemCasamento> getStandartList(){
             return ListaDeItemsStandart;
@@ -71,12 +71,4 @@ class GerenciadorDeItem {
     public List<ItemCasamento> getPremierList(){
             return ListaDeItemsPremier;
     }
-
-    public List<ItemCasamento> GetItemCasamentoLuxo(){
-        return repository.GetItemCasamentoPorTipo(CasamentoTipoEnum.LUXO);
-    }
-
-    public List<ItemCasamento> GetItemPorTipo(CasamentoTipoEnum tipo){
-        return repository.GetItemCasamentoPorTipo(tipo);
-    } 
 }

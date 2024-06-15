@@ -1,0 +1,13 @@
+@startuml
+class Casamento {
+    + {static} PrecoFinalCasamento : float <<get>> <<set>>
+    + Casamento(EspacoCasamento:Espaco, TipoCasamento:CasamentoTipoEnum, lista:List<ItemCasamento>)
+    + ValorTotalCasamento() : double
+}
+class "List`1"<T> {
+}
+Model <|-- Casamento
+Casamento --> "EspacoCasamento" Espaco
+Casamento --> "TipoCasamento" CasamentoTipoEnum
+Casamento --> "ItemsDoCasamento<ItemCasamento>" "List`1"
+@enduml

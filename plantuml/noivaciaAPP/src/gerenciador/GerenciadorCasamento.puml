@@ -1,0 +1,8 @@
+@startuml
+class GerenciadorCasamento {
+    + {static} MarcarCasamento() : void
+    + {static} pegarEspaco() : Espaco
+    + {static} PegarTipoCasamento() : CasamentoTipoEnum
+    + {static} PegarListaCasamento(TipoCasamento:CasamentoTipoEnum) : List<ItemCasamento>
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class ItemCasamentoRepository {
+    + ItemCasamentoRepository(mapper:IMapper<ItemCasamento, ItemFestaEntity>, database:IDatabase)
+    + GetItemCasamentoPorTipo(tipo:CasamentoTipoEnum) : List<ItemCasamento>
+}
+@enduml

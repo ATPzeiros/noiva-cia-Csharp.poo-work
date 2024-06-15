@@ -8,4 +8,11 @@ static class RepositoryInjector{
             database: new IDatabaseImpl()
         );
     }
+
+    public static EspacoRepository CreateEspacoRepository() => new();
+
+    public static FestaRepository CreateFestaRepository() => new(
+        mapper: new FestaMapper(),
+        database: new IDatabaseImpl()
+    );
 }

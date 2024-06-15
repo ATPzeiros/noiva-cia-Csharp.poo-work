@@ -1,0 +1,8 @@
+@startuml
+class ItemRepositoryTest {
+    + Setup() : void
+    + ItemStandard() : void
+    + ItemLuxo() : void
+    + ItemPremier() : void
+}
+@enduml

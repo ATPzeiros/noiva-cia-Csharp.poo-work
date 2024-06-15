@@ -1,0 +1,7 @@
+@startuml
+enum CasamentoTipoEnum {
+    STANDART,
+    LUXO,
+    PREMIER,
+}
+@enduml

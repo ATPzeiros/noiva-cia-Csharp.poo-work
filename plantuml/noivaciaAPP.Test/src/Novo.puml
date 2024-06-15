@@ -1,0 +1,6 @@
+@startuml
+class NovoTest {
+    + Setup() : void
+    + Test1() : void
+}
+@enduml

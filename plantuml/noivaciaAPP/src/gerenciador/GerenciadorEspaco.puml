@@ -1,0 +1,6 @@
+@startuml
+class GerenciadorEspaco {
+    + GerenciadorEspaco()
+    + ReservarEspaco(qntConvidados:int) : Espaco
+}
+@enduml
