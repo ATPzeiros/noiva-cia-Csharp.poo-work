@@ -19,7 +19,7 @@ namespace NoivaCiaApp.repository
             this.database = database;
         }
 
-        public List<ItemCasamento> GetItemCasamentoPorTipo(CasamentoTipoEnum tipo)
+        public List<ItemCasamento> GetItemCasamentoPorTipo(EventoTipoEnum tipo)
         {
             try
             {

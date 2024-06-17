@@ -11,7 +11,7 @@ namespace NoivaCiaApp.mapper
                 Id: entity.Id,
                 Name: entity.Name ?? "",
                 Value: entity.Value,
-                TipoCasamento: (CasamentoTipoEnum)entity.TipoCasamento,
+                TipoCasamento: (EventoTipoEnum)entity.TipoCasamento,
                 TipoItem: (ItemTipoEnum)entity.TipoItem
             );
         }

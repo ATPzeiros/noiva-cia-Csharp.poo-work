@@ -7,7 +7,6 @@ namespace NoivaCiaApp
         static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Green;
 
             string[] primeiroMenu = { "Marcar Casamento", "Ver Casamentos", "Excluir Casamentos", "SAIR" };
             string[] subMenuVerCasamentos = { "Ver Casamentos Por Data", "Ver Casamento Por Quantidade Convidados", "Voltar" };
@@ -44,7 +43,7 @@ namespace NoivaCiaApp
                     {
                         if (posicaoAtual == 0)
                         {
-                            GerenciadorCasamento.MarcarCasamento();
+                            GerenciadorEvento.MarcarEvento();
                         }
                         else if (posicaoAtual == 1)
                         {

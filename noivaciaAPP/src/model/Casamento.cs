@@ -2,13 +2,13 @@ using NoivaCiaApp.model;
 
 public class Casamento : Model {
     public Espaco EspacoCasamento {get; set;}
-    public CasamentoTipoEnum TipoCasamento {get;set;}
+    public EventoTipoEnum TipoCasamento {get;set;}
 
     public List<ItemCasamento> ItemsDoCasamento {get; set;}
 
     public static float PrecoFinalCasamento {get;set;}
 
-    public Casamento(Espaco EspacoCasamento, CasamentoTipoEnum TipoCasamento, List<ItemCasamento> lista){
+    public Casamento(Espaco EspacoCasamento, EventoTipoEnum TipoCasamento, List<ItemCasamento> lista){
         this.EspacoCasamento = EspacoCasamento;
         this.TipoCasamento = TipoCasamento;
         ItemsDoCasamento = lista;
