@@ -6,7 +6,7 @@ static class DatabaseConnection
 
     public static SQLiteConnection GetDatabase()
     {
-        db ??= new SQLiteConnection(Directory.GetCurrentDirectory() + "/persistence/noiva_cia.db");
+        db ??= new SQLiteConnection(Directory.GetCurrentDirectory() + "/src/persistence/noiva_cia.db");
         return db;
     }
 }

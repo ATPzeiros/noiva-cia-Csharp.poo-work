@@ -18,7 +18,7 @@ class Menu{
     }
 
     public static void ShowMenuLogo() {
-        string menuArt = File.ReadAllText(System.IO.Directory.GetCurrentDirectory() + "/logo.txt");
+        string menuArt = File.ReadAllText(System.IO.Directory.GetCurrentDirectory() + "/src/logo.txt");
         Console.WriteLine(menuArt);
     }
 }

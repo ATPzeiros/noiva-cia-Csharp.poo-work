@@ -45,6 +45,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
             "System.Data.SQLite": {
               "target": "Package",
               "version": "[1.0.118, )"

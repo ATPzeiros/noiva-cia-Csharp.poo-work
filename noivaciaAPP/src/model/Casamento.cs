@@ -1,6 +1,6 @@
-using NoivaPoo;
+using NoivaCiaApp.model;
 
-public class Casamento  {
+public class Casamento : Model {
     public Espaco EspacoCasamento {get; set;}
     public CasamentoTipoEnum TipoCasamento {get;set;}
 

@@ -1,4 +1,4 @@
-using NoivaPoo;
+using NoivaCiaApp.model;
 
 public class Espaco: EspacoBase {
     public int qntConvidados {get; set;}

@@ -1,4 +1,4 @@
-using NoivaPoo;
+using NoivaCiaApp.model;
 
 class GerenciadorCasamento
 {
