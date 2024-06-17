@@ -35,13 +35,16 @@ namespace noivaCiaApp.gerenciador
 
             while(true) {
                 var espaco = espacos[i % espacos.Count];
-                bool espacoLocado = repository.EspacoLocado(possivelData);
+                bool espacoLocado = repository.EspacoLocado(espaco.Id, possivelData);
+                Console.WriteLine($"espaco locado? {espaco.Nome} - {espacoLocado}");
 
                 if(!espacoLocado){
                     return new Locacao(espaco, possivelData, qntConvidados);
                 } else {
                     if(i % espacos.Count == 0 && i != 0){
                         possivelData = calendario.Prox_date(possivelData); 
+                        Console.WriteLine($"Tentando proxima data: {possivelData}");
+                        Console.ReadKey();
                     }
                     i++;
                 }

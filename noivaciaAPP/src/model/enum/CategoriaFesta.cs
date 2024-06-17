@@ -1,4 +1,4 @@
-enum CategoriaFesta{
+public enum CategoriaFesta{
     CASAMENTO,
     FORMATURA,
     FESTA_DE_EMPRESA,

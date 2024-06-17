@@ -29,21 +29,30 @@ namespace noivaciaAPP.Test
         [Test]
         public void ItemStandard()
         {
-            var items = repository.GetItemCasamentoPorTipo(CasamentoTipoEnum.STANDART);
+            var items = repository.GetItemCasamentoPorTipo(
+                tipo: ItemTipoEnum.COMIDA,
+                casamentoTipo: CasamentoTipoEnum.LUXO
+            );
             Assert.That(items, Has.Count.EqualTo(1));
         }
 
         [Test]
         public void ItemLuxo()
         {
-            var items = repository.GetItemCasamentoPorTipo(CasamentoTipoEnum.LUXO);
+            var items = repository.GetItemCasamentoPorTipo(
+                tipo: ItemTipoEnum.COMIDA,
+                casamentoTipo: CasamentoTipoEnum.LUXO
+            );
             Assert.That(items, Has.Count.EqualTo(0));
         }
 
         [Test]
         public void ItemPremier()
         {
-            var items = repository.GetItemCasamentoPorTipo(CasamentoTipoEnum.PREMIER);
+            var items = repository.GetItemCasamentoPorTipo(
+                tipo: ItemTipoEnum.COMIDA,
+                casamentoTipo: CasamentoTipoEnum.LUXO
+            );
             Assert.That(items, Has.Count.EqualTo(0));
         }
     }

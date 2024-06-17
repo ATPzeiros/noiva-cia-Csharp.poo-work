@@ -1,4 +1,4 @@
-public enum CasamentoTipoEnum {
+public enum TipoFesta {
     STANDART, 
     LUXO, 
     PREMIER

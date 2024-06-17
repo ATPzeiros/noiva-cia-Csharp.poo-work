@@ -2,8 +2,8 @@ using SQLite;
 
 namespace NoivaCiaApp.entity
 {
-    [Table("ItemFestaEntity")]
-    public class ItemFestaEntity : Entity
+    [Table("ItemEntity")]
+    public class ItemEntity : Entity
     {
 
         [PrimaryKey, AutoIncrement]
@@ -13,8 +13,8 @@ namespace NoivaCiaApp.entity
         public string? Name { get; set; }
         [Column("value")]
         public float Value { get; set; }
-        [Column("tipoCasamento")]
-        public int TipoCasamento { get; set; }
+        [Column("tipoFesta")]
+        public int TipoFesta { get; set; }
         [Column("tipoItem")]
         public int TipoItem { get; set; }
         [Column("tipoServico")]

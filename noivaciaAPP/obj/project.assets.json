@@ -166,6 +166,19 @@
           }
         }
       },
+      "Spectre.Console/0.49.1": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Spectre.Console.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "sqlite-net-pcl/1.9.172": {
         "type": "package",
         "dependencies": {
@@ -942,6 +955,26 @@
         "version.txt"
       ]
     },
+    "Spectre.Console/0.49.1": {
+      "sha512": "USV+pdu49OJ3nCjxNuw1K9Zw/c1HCBbwbjXZp0EOn6wM99tFdAtN34KEBZUMyRuJuXlUMDqhd8Yq9obW2MslYA==",
+      "type": "package",
+      "path": "spectre.console/0.49.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Spectre.Console.dll",
+        "lib/net6.0/Spectre.Console.xml",
+        "lib/net7.0/Spectre.Console.dll",
+        "lib/net7.0/Spectre.Console.xml",
+        "lib/net8.0/Spectre.Console.dll",
+        "lib/net8.0/Spectre.Console.xml",
+        "lib/netstandard2.0/Spectre.Console.dll",
+        "lib/netstandard2.0/Spectre.Console.xml",
+        "small-logo.png",
+        "spectre.console.0.49.1.nupkg.sha512",
+        "spectre.console.nuspec"
+      ]
+    },
     "sqlite-net-pcl/1.9.172": {
       "sha512": "go533+huyvg5bOMmCpX+DyvLrcVRiEBIpqEiDHgXRijWIBBNkWnyMr/w+5ZzrUArKY+4ApucsbBnFtP3QITrJg==",
       "type": "package",
@@ -1635,6 +1668,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Moq >= 4.20.70",
+      "Spectre.Console >= 0.49.1",
       "System.Data.SQLite >= 1.0.118",
       "sqlite-net-pcl >= 1.9.172"
     ]
@@ -1686,6 +1720,10 @@
           "Moq": {
             "target": "Package",
             "version": "[4.20.70, )"
+          },
+          "Spectre.Console": {
+            "target": "Package",
+            "version": "[0.49.1, )"
           },
           "System.Data.SQLite": {
             "target": "Package",

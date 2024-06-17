@@ -14,6 +14,9 @@ namespace noivaCiaApp.entity
         [Column("tipo")]
         public int Tipo { get; set; }
 
+        [Column("categoria")]
+        public int Categoria { get; set; }
+
         [Column("fk_espaco")]
         public int EspacoId { get; set; }
 
@@ -25,5 +28,8 @@ namespace noivaCiaApp.entity
 
         [Column("year")]
         public int Year { get; set; }
+
+        [Column("convidados")]
+        public int QntConvidados { get; set; }
     }
 }

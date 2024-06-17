@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Gld9djB4hUbNNBgBWdpcwbdgpSvVHtFhOKeBWEwLXR37n+d4DYtG669b8DW8tl7hYxnghG8ywqO6NeXdKNceFg==",
+  "dgSpecHash": "AKHUlcfoKK81wJTVCcMxnfIHi4ndocJJ10yYpNom+fzkdb0L2QU16qerAymVBQWYyHy5HjFCdoftMiRU5Xphxg==",
   "success": true,
   "projectFilePath": "D:\\csharp\\poo\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Gustavo\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Gustavo\\.nuget\\packages\\spectre.console\\0.49.1\\spectre.console.0.49.1.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.2\\sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",

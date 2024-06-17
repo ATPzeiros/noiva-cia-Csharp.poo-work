@@ -5,20 +5,20 @@ namespace noivaCiaApp.gerenciador
 {
     class NewGerenciadorItems
     {
-        private readonly ItemCasamentoRepository repository;
+        private readonly ItemRepository repository;
 
-        public NewGerenciadorItems(ItemCasamentoRepository repository)
+        public NewGerenciadorItems(ItemRepository repository)
         {
             this.repository = repository;
         }
 
-        public List<ItemCasamento> GetItemsServicoBasico(
+        public List<Item> GetItemsServicoBasico(
             ItemTipoEnum tipo,
             CategoriaFesta categoria,
-            CasamentoTipoEnum tipoCasamento
+            TipoFesta tipoCasamento
         )
         {
-            List<ItemCasamento> items = repository.GetItemCasamentoPorTipo(tipo, tipoCasamento);
+            List<Item> items = repository.GetItemPorTipo(tipo, tipoCasamento);
 
             if (categoria == CategoriaFesta.CASAMENTO)
             {
@@ -38,19 +38,19 @@ namespace noivaCiaApp.gerenciador
             }
             else if (categoria == CategoriaFesta.FESTA_DE_ANIVERSARIO)
             {
-                return items.Where(item => item.TipoCasamento == CasamentoTipoEnum.STANDART).ToList();
+                return items.Where(item => item.TipoFesta == TipoFesta.STANDART).ToList();
             }
             else
             {
-                return new List<ItemCasamento>();
+                return new List<Item>();
             }
         }
 
-        public List<ItemCasamento> GetItemsFestaPorTipo(
+        public List<Item> GetItemsFestaPorTipo(
             ItemTipoEnum tipo,
-            CasamentoTipoEnum categoria
+            TipoFesta categoria
         ){
-            return repository.GetItemCasamentoPorTipo(tipo, categoria);
+            return repository.GetItemPorTipo(tipo, categoria);
         }
     }
 }
