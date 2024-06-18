@@ -1640,26 +1640,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leand\\.nuget\\packages\\": {}
+    "/Users/gustavooliveira/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\minhas coisas\\faculdade\\1. materias\\POO\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
+      "projectUniqueName": "/Users/gustavooliveira/Documents/facul/poo/noiva-cia.poo/noivaciaAPP/noivaciaAPP.csproj",
       "projectName": "noivaciaAPP",
-      "projectPath": "D:\\minhas coisas\\faculdade\\1. materias\\POO\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
-      "packagesPath": "C:\\Users\\leand\\.nuget\\packages\\",
-      "outputPath": "D:\\minhas coisas\\faculdade\\1. materias\\POO\\noiva-cia.poo\\noivaciaAPP\\obj\\",
+      "projectPath": "/Users/gustavooliveira/Documents/facul/poo/noiva-cia.poo/noivaciaAPP/noivaciaAPP.csproj",
+      "packagesPath": "/Users/gustavooliveira/.nuget/packages/",
+      "outputPath": "/Users/gustavooliveira/Documents/facul/poo/noiva-cia.poo/noivaciaAPP/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\leand\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/gustavooliveira/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1710,19 +1708,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
+            "version": "[7.0.20, 7.0.20]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.16, 7.0.16]"
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[7.0.20, 7.0.20]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.16, 7.0.16]"
+            "version": "[7.0.20, 7.0.20]"
           }
         ],
         "frameworkReferences": {
@@ -1730,7 +1724,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.302/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,4 +1,6 @@
 ﻿using System.Media;
+using NoivaCiaApp.mapper;
+using SQLitePCL;
 
 namespace NoivaCiaApp
 {
@@ -18,6 +20,8 @@ namespace NoivaCiaApp
             int posicaoAtual = 0;
             int op = 1;
             ConsoleKeyInfo keyInfo;
+
+            _ = new PopulateDatabase(database: new IDatabaseImpl(), mapper: new ItemCasamentoMapper(), espacoMapper: new EspacoMapper());
 
             do
             {

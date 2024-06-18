@@ -11,4 +11,12 @@ public class Espaco: EspacoBase {
         this.Tipo = Tipo;
         Datas_Locadas = new List<DateTime>();
     }
+
+    public Espaco(int Id, string Nome, int CapacidadeMax, int Valor, EspacoTipoEnum Tipo){
+        this.Nome = Nome;
+        this.CapacidadeMax = CapacidadeMax;
+        this.Valor = Valor;
+        this.Tipo = Tipo;
+        Datas_Locadas = new List<DateTime>();
+    }
 }
