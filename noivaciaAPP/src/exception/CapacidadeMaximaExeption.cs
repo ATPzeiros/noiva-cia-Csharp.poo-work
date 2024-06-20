@@ -1,0 +1,4 @@
+class CapacidadeMaximaExeption: Exception
+{
+    
+}

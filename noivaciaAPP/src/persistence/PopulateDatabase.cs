@@ -7,12 +7,12 @@ using NoivaCiaApp.persistence;
 class PopulateDatabase
 {
     private readonly IDatabase database;
-    private readonly IMapper<ItemCasamento, ItemFestaEntity> mapper;
+    private readonly IMapper<ItemFesta, ItemFestaEntity> mapper;
     private readonly IMapper<Espaco, EspacoEntity> espacoMapper;
 
     public PopulateDatabase(
         IDatabase database, 
-        IMapper<ItemCasamento, ItemFestaEntity> mapper,
+        IMapper<ItemFesta, ItemFestaEntity> mapper,
         IMapper<Espaco, EspacoEntity> espacoMapper
     ){
         this.database = database;
@@ -46,53 +46,52 @@ class PopulateDatabase
     }
 
     private void PopulateItems(){
-        List<ItemCasamento> items = new(){
-            new ItemCasamento("Itens de Mesa", 50, EventoTipoEnum.STANDART, ItemTipoEnum.BASICO ),
-            new ItemCasamento("Decoração", 50, EventoTipoEnum.STANDART, ItemTipoEnum.BASICO),
-            new ItemCasamento("BoloCasamento", 10, EventoTipoEnum.STANDART, ItemTipoEnum.BASICO),
-            new ItemCasamento("Música", 20, EventoTipoEnum.STANDART, ItemTipoEnum.BASICO),
-            new ItemCasamento("Coxinha", 40, EventoTipoEnum.STANDART, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Kibe", 40, EventoTipoEnum.STANDART, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Empadinha", 40, EventoTipoEnum.STANDART, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Pão de Queijo", 40, EventoTipoEnum.STANDART, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Água Sem Gás (1.5 L)", 5, EventoTipoEnum.STANDART, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Suco(1 L)", 7, EventoTipoEnum.STANDART, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Refrigerante (2 L)", 8, EventoTipoEnum.STANDART, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Cerveja Comum (600 ml)", 20, EventoTipoEnum.STANDART, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Espumante Nacional (750 ml)", 80, EventoTipoEnum.STANDART, ItemTipoEnum.BEBIDA),
-
+        List<ItemFesta> items = new(){
+            new ItemFesta("Itens de Mesa", 50, TipoEventoEnum.STANDART, ItemTipoEnum.BASICO),
+            new ItemFesta("Decoração", 50, TipoEventoEnum.STANDART, ItemTipoEnum.BASICO),
+            new ItemFesta("BoloCasamento", 10, TipoEventoEnum.STANDART, ItemTipoEnum.BASICO),
+            new ItemFesta("Música", 20, TipoEventoEnum.STANDART, ItemTipoEnum.BASICO),
+            new ItemFesta("Coxinha", 40, TipoEventoEnum.STANDART, ItemTipoEnum.COMIDA),
+            new ItemFesta("Kibe", 40, TipoEventoEnum.STANDART, ItemTipoEnum.COMIDA),
+            new ItemFesta("Empadinha", 40, TipoEventoEnum.STANDART, ItemTipoEnum.COMIDA),
+            new ItemFesta("Pão de Queijo", 40, TipoEventoEnum.STANDART, ItemTipoEnum.COMIDA),
+            new ItemFesta("Água Sem Gás (1.5 L)", 5, TipoEventoEnum.STANDART, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Suco(1 L)", 7, TipoEventoEnum.STANDART, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Refrigerante (2 L)", 8, TipoEventoEnum.STANDART, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Cerveja Comum (600 ml)", 20, TipoEventoEnum.STANDART, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Espumante Nacional (750 ml)", 80, TipoEventoEnum.STANDART, ItemTipoEnum.BEBIDA),
         
-            new ItemCasamento("Itens de Mesa", 75, EventoTipoEnum.LUXO, ItemTipoEnum.BASICO ),
-            new ItemCasamento("Decoração", 75, EventoTipoEnum.LUXO, ItemTipoEnum.BASICO),
-            new ItemCasamento("BoloCasamento", 15, EventoTipoEnum.LUXO, ItemTipoEnum.BASICO),
-            new ItemCasamento("Música", 25, EventoTipoEnum.LUXO, ItemTipoEnum.BASICO),
-            new ItemCasamento("Croquete de Carne Seca", 48, EventoTipoEnum.LUXO, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Barquetes Legumes", 48, EventoTipoEnum.LUXO, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Empadinha Gourmet", 48, EventoTipoEnum.LUXO, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Cestinha Bacalhau", 48, EventoTipoEnum.LUXO, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Água Sem Gás (1.5 L)", 5, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Suco(1 L)", 7, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Refrigerante (2 L)", 8, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Cerveja Comum (600 ml)", 20, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Cerveja Artesanal (600 ml)", 30, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Espumante Nacional (750 ml)", 80, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Espumante Importado (750 ml)", 140, EventoTipoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Itens de Mesa", 75, TipoEventoEnum.LUXO, ItemTipoEnum.BASICO),
+            new ItemFesta("Decoração", 75, TipoEventoEnum.LUXO, ItemTipoEnum.BASICO),
+            new ItemFesta("BoloCasamento", 15, TipoEventoEnum.LUXO, ItemTipoEnum.BASICO),
+            new ItemFesta("Música", 25, TipoEventoEnum.LUXO, ItemTipoEnum.BASICO),
+            new ItemFesta("Croquete de Carne Seca", 48, TipoEventoEnum.LUXO, ItemTipoEnum.COMIDA),
+            new ItemFesta("Barquetes Legumes", 48, TipoEventoEnum.LUXO, ItemTipoEnum.COMIDA),
+            new ItemFesta("Empadinha Gourmet", 48, TipoEventoEnum.LUXO, ItemTipoEnum.COMIDA),
+            new ItemFesta("Cestinha Bacalhau", 48, TipoEventoEnum.LUXO, ItemTipoEnum.COMIDA),
+            new ItemFesta("Água Sem Gás (1.5 L)", 5, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Suco(1 L)", 7, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Refrigerante (2 L)", 8, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Cerveja Comum (600 ml)", 20, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Cerveja Artesanal (600 ml)", 30, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Espumante Nacional (750 ml)", 80, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Espumante Importado (750 ml)", 140, TipoEventoEnum.LUXO, ItemTipoEnum.BEBIDA),
         
-            new ItemCasamento("Itens de Mesa", 100, EventoTipoEnum.PREMIER, ItemTipoEnum.BASICO ),
-            new ItemCasamento("Decoração", 100, EventoTipoEnum.PREMIER, ItemTipoEnum.BASICO),
-            new ItemCasamento("BoloCasamento", 20, EventoTipoEnum.PREMIER, ItemTipoEnum.BASICO),
-            new ItemCasamento("Música", 30, EventoTipoEnum.PREMIER, ItemTipoEnum.BASICO),
-            new ItemCasamento("Canapé", 60, EventoTipoEnum.PREMIER, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Tartine", 60, EventoTipoEnum.PREMIER, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Bruschetta", 60, EventoTipoEnum.PREMIER, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Espetinho carprese", 60, EventoTipoEnum.PREMIER, ItemTipoEnum.COMIDA),
-            new ItemCasamento("Água Sem Gás (1.5 L)", 5, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Suco(1 L)", 7, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Refrigerante (2 L)", 8, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Cerveja Comum (600 ml)", 20, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Cerveja Artesanal (600 ml)", 30, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Espumante Nacional (750 ml)", 80, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA),
-            new ItemCasamento("Espumante Importado (750 ml)", 140, EventoTipoEnum.PREMIER, ItemTipoEnum.BEBIDA)
+            new ItemFesta("Itens de Mesa", 100, TipoEventoEnum.PREMIER, ItemTipoEnum.BASICO),
+            new ItemFesta("Decoração", 100, TipoEventoEnum.PREMIER, ItemTipoEnum.BASICO),
+            new ItemFesta("BoloCasamento", 20, TipoEventoEnum.PREMIER, ItemTipoEnum.BASICO),
+            new ItemFesta("Música", 30, TipoEventoEnum.PREMIER, ItemTipoEnum.BASICO),
+            new ItemFesta("Canapé", 60, TipoEventoEnum.PREMIER, ItemTipoEnum.COMIDA),
+            new ItemFesta("Tartine", 60, TipoEventoEnum.PREMIER, ItemTipoEnum.COMIDA),
+            new ItemFesta("Bruschetta", 60, TipoEventoEnum.PREMIER, ItemTipoEnum.COMIDA),
+            new ItemFesta("Espetinho carprese", 60, TipoEventoEnum.PREMIER, ItemTipoEnum.COMIDA),
+            new ItemFesta("Água Sem Gás (1.5 L)", 5, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Suco(1 L)", 7, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Refrigerante (2 L)", 8, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Cerveja Comum (600 ml)", 20, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Cerveja Artesanal (600 ml)", 30, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Espumante Nacional (750 ml)", 80, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA),
+            new ItemFesta("Espumante Importado (750 ml)", 140, TipoEventoEnum.PREMIER, ItemTipoEnum.BEBIDA)
         };
 
 

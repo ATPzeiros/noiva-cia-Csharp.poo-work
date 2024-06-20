@@ -3,20 +3,20 @@ using NoivaCiaApp.model;
 
 namespace NoivaCiaApp.mapper
 {
-    public class ItemCasamentoMapper : IMapper<ItemCasamento, ItemFestaEntity>
+    public class ItemCasamentoMapper : IMapper<ItemFesta, ItemFestaEntity>
     {
-        public ItemCasamento MapToModel(ItemFestaEntity entity)
+        public ItemFesta MapToModel(ItemFestaEntity entity)
         {
-            return new ItemCasamento(
+            return new ItemFesta(
                 Id: entity.Id,
                 Name: entity.Name ?? "",
                 Value: entity.Value,
-                TipoCasamento: (EventoTipoEnum)entity.TipoCasamento,
+                TipoCasamento: (TipoEventoEnum)entity.TipoCasamento,
                 TipoItem: (ItemTipoEnum)entity.TipoItem
             );
         }
 
-        public ItemFestaEntity MapToEntity(ItemCasamento itemCasamento)
+        public ItemFestaEntity MapToEntity(ItemFesta itemCasamento)
         {
             return new()
             {

@@ -8,18 +8,18 @@ namespace NoivaCiaApp.repository
     public class ItemCasamentoRepository
     {
 
-        private readonly IMapper<ItemCasamento, ItemFestaEntity> mapper;
+        private readonly IMapper<ItemFesta, ItemFestaEntity> mapper;
         private readonly IDatabase database;
 
         public ItemCasamentoRepository(
-            IMapper<ItemCasamento, ItemFestaEntity> mapper, 
+            IMapper<ItemFesta, ItemFestaEntity> mapper, 
             IDatabase database
         ) {
             this.mapper = mapper;
             this.database = database;
         }
 
-        public List<ItemCasamento> GetItemCasamentoPorTipo(EventoTipoEnum tipo)
+        public List<ItemFesta> GetItemCasamentoPorTipo(TipoEventoEnum tipo)
         {
             try
             {
@@ -27,12 +27,12 @@ namespace NoivaCiaApp.repository
                     .GetEntities<ItemFestaEntity>()
                     .Where(item => item.TipoCasamento == (int)tipo)
                     .Select(item => mapper?.MapToModel(item))
-                    .OfType<ItemCasamento>()
+                    .OfType<ItemFesta>()
                     .ToList();
             }
             catch
             {
-                return new List<ItemCasamento>();
+                return new List<ItemFesta>();
             }
         }
     }

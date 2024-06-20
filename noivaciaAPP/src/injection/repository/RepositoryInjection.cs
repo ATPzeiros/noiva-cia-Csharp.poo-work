@@ -8,6 +8,14 @@ static class RepositoryInjector{
             database: new IDatabaseImpl()
         );
     }
+
+    public static EspacoRepository CreateEspacoRepository(){
+        return new EspacoRepository(
+            mapper: new EspacoMapper(),
+            database: new IDatabaseImpl()
+        );
+    }
+
     public static FestaRepository CreateFestaRepository(){
         return new FestaRepository(
             mapper: new FestaMapper(),

@@ -1,5 +1,5 @@
-public enum EventoTipoEnum {
-    STANDART = 1, 
-    LUXO = 2,
-    PREMIER = 3,
+public enum TipoEventoEnum {
+    STANDART, 
+    LUXO, 
+    PREMIER
 }

@@ -4,26 +4,49 @@ using SQLitePCL;
 
 class GerenciadorEvento
 {
-    static FestaRepository repository = RepositoryInjector.CreateFestaRepository();
-    
-    public static void MarcarEvento(){
-        Espaco espacoEvento = ObterEspaço();
-        EventoTipoEnum tipoEvento = ObterTipoEvento();
-        Casamento casamento = new Casamento(espacoEvento, tipoEvento);
-        repository.SaveCasamento(casamento);
-    }
-    public static Espaco ObterEspaço(){
-        GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
 
-        Console.Write("Quantidade de convidados: ");
-        int quantidadeConvidados = int.Parse(Console.ReadLine() ?? "0");
-        Espaco espaco = gerenciadorEspaco.ReservarEspaco(quantidadeConvidados);
-
-        return espaco;
+    private readonly FestaRepository repository;
+    private readonly IRelatorio relatorio;
+    public GerenciadorEvento(FestaRepository repository, IRelatorio relatorio){
+        this.repository = repository;
+        this.relatorio = relatorio;
     }
 
-    public static EventoTipoEnum ObterTipoEvento(){
-        EventoTipoEnum tipoEventoEscolhido = EventoTipoEnum.STANDART;
+    public bool MarcarEvento(Festa festa)
+    {
+        return repository.SaveCasamento(festa);
+
+        
+        // Espaco espacoEvento = ObterEspaço();
+        // EventoTipoEnum tipoEvento = ObterTipoEvento();
+        // var listaConformeTipoEvento = GetListaCasamento(tipoEvento);
+
+        // Casamento casamento = new Casamento(espacoEvento, tipoEvento, listaConformeTipoEvento);
+    }
+
+    public void GerarResumo(
+        Festa festa
+    ){
+        relatorio.GerarRelatorio(festa);
+    }
+
+    public float ValorTotalCasamento(Espaco? espaco, TipoCategoria categoria, TipoEventoEnum tipoEvento){
+        float valorTotal = espaco.Valor;
+        // valorTotal += 
+        return 0f;
+    }
+    // public Espaco ObterEspaço(){
+    //     GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
+
+    //     Console.Write("Quantidade de convidados: ");
+    //     int quantidadeConvidados = int.Parse(Console.ReadLine() ?? "0");
+    //     Espaco espaco = gerenciadorEspaco.ReservarEspaco(quantidadeConvidados);
+
+    //     return espaco;
+    // }
+
+    public TipoEventoEnum ObterTipoEvento(){
+        TipoEventoEnum tipoEventoEscolhido = TipoEventoEnum.STANDART;
         
         int opcao = 0;
         do
@@ -37,13 +60,13 @@ class GerenciadorEvento
 
             switch (opcao) {
                 case 1: 
-                    tipoEventoEscolhido = EventoTipoEnum.STANDART;
+                    tipoEventoEscolhido = TipoEventoEnum.STANDART;
                     break;
                 case 2: 
-                    tipoEventoEscolhido = EventoTipoEnum.LUXO;
+                    tipoEventoEscolhido = TipoEventoEnum.LUXO;
                     break;
                 case 3: 
-                    tipoEventoEscolhido = EventoTipoEnum.PREMIER;
+                    tipoEventoEscolhido = TipoEventoEnum.PREMIER;
                     break;
             }
             return tipoEventoEscolhido;
@@ -52,27 +75,22 @@ class GerenciadorEvento
 
     }
     
-    public static List<ItemCasamento> GetListaCasamento(EventoTipoEnum TipoEvento){
-        GerenciadorDeItem items = new GerenciadorDeItem();
-        List<ItemCasamento> List = new List<ItemCasamento>();
-        if(TipoEvento == EventoTipoEnum.STANDART){
-            List = items.getStandartList();
-        }
-        else if(TipoEvento == EventoTipoEnum.LUXO){
-             List = items.getLuxoList();
-        }
-        else if(TipoEvento == EventoTipoEnum.PREMIER){
-             List = items.getPremierList();
-        }
-        return List;
-    }
+    // public List<ItemCasamento> GetListaCasamento(EventoTipoEnum TipoEvento){
+    //     GerenciadorDeItem items = new GerenciadorDeItem();
+    //     List<ItemCasamento> List = new List<ItemCasamento>();
+    //     if(TipoEvento == EventoTipoEnum.STANDART){
+    //         List = items.getStandartList();
+    //     }
+    //     else if(TipoEvento == EventoTipoEnum.LUXO){
+    //          List = items.getLuxoList();
+    //     }
+    //     else if(TipoEvento == EventoTipoEnum.PREMIER){
+    //          List = items.getPremierList();
+    //     }
+    //     return List;
+    // }
 
-    public bool ExcluirEventoPorData(){
-        Console.Write("Data do evento a ser excluido: ");
-        var data = Console.ReadLine();
+    public void ExcluirEventoPorData(){
 
-        
-
-        return false;
     }
 }

@@ -8,18 +8,18 @@ namespace NoivaCiaApp.repository
     public class FestaRepository
     {
 
-        private readonly IMapper<Casamento, FestaEntity> mapper;
+        private readonly IMapper<Festa, FestaEntity> mapper;
         private readonly IDatabase database;
 
         public FestaRepository(
-            IMapper<Casamento, FestaEntity> mapper, 
+            IMapper<Festa, FestaEntity> mapper, 
             IDatabase database
         ) {
             this.mapper = mapper;
             this.database = database;
         }
 
-        public List<Casamento> GetCasamentoPorTipo(EventoTipoEnum tipo)
+        public List<Casamento> GetCasamentoPorTipo(TipoEventoEnum tipo)
         {
             try
             {
@@ -35,13 +35,8 @@ namespace NoivaCiaApp.repository
                 return new List<Casamento>();
             }
         }
-        public bool SaveCasamento(Casamento casamento){
-            List<Casamento> a = new List<Casamento>
-            {
-                casamento
-            };
-            database.SaveEntities(a.Select(mapper.MapToEntity).ToList());
-            return true;
+        public bool SaveCasamento(Festa festa){
+            return database.SaveEntity(mapper.MapToEntity(festa)) > 0;
         }
     }
 }

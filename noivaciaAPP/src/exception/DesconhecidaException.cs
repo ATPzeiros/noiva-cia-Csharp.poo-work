@@ -1,0 +1,4 @@
+class DesconhecidaException: Exception
+{
+    
+}

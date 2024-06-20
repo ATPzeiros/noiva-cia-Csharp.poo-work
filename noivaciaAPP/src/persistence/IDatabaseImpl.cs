@@ -23,4 +23,10 @@ class IDatabaseImpl : IDatabase
         dbConnection.CreateTable<T>();
         return dbConnection.InsertAll(items);
     }
+
+    public int SaveEntity<T>(T item) where T : Entity, new()
+    {
+        dbConnection.CreateTable<T>();
+        return dbConnection.Insert(item);
+    }
 }

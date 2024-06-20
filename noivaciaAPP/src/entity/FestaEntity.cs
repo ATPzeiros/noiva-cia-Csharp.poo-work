@@ -1,10 +1,10 @@
 using NoivaCiaApp.entity;
 using SQLite;
 
- [Table("FestaEntity")]
+[Table("FestaEntity")]
 public class FestaEntity : Entity
 {
-    [PrimaryKey]
+    [PrimaryKey, AutoIncrement]
     [Column("id")]
     public override int Id { get; set; }
 
