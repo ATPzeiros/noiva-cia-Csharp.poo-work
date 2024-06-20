@@ -1645,11 +1645,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\minhas coisas\\faculdade\\1. materias\\POO\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
+      "projectUniqueName": "C:\\Faculdade\\trabalho_poo\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
       "projectName": "noivaciaAPP",
-      "projectPath": "D:\\minhas coisas\\faculdade\\1. materias\\POO\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
+      "projectPath": "C:\\Faculdade\\trabalho_poo\\noiva-cia.poo\\noivaciaAPP\\noivaciaAPP.csproj",
       "packagesPath": "C:\\Users\\leand\\.nuget\\packages\\",
-      "outputPath": "D:\\minhas coisas\\faculdade\\1. materias\\POO\\noiva-cia.poo\\noivaciaAPP\\obj\\",
+      "outputPath": "C:\\Faculdade\\trabalho_poo\\noiva-cia.poo\\noivaciaAPP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\leand\\AppData\\Roaming\\NuGet\\NuGet.Config",

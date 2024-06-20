@@ -7,7 +7,6 @@ namespace NoivaCiaApp.model
         public float Price { get; set; }
         public EventoTipoEnum TipoCasamento { get; set; }
         public ItemTipoEnum TipoItem { get; set; }
-
         public int QuantidadeDoItem { get; set; }
 
         public ItemCasamento(string Name, float Value, EventoTipoEnum TipoCasamento, ItemTipoEnum TipoItem)

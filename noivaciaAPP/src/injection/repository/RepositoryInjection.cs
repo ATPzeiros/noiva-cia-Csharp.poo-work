@@ -8,4 +8,10 @@ static class RepositoryInjector{
             database: new IDatabaseImpl()
         );
     }
+    public static EspacoEventoRepository CreateEspacoEventoRepository(){
+        return new EspacoEventoRepository(
+            mapper: new EspacoEventoMapper(),
+            database: new IDatabaseImpl()
+        );
+    }
 }

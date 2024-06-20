@@ -10,7 +10,7 @@ class GerenciadorEvento
         Casamento casamento = new Casamento(espacoEvento, tipoEvento, listaConformeTipoEvento);
     }
     public static Espaco ObterEspaço(){
-        GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
+        GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco(RepositoryInjector.CreateEspacoEventoRepository());
 
         Console.Write("Quantidade de convidados: ");
         int quantidadeConvidados = int.Parse(Console.ReadLine() ?? "0");
