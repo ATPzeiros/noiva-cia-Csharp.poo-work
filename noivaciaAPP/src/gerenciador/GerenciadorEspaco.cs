@@ -1,11 +1,9 @@
-using NoivaCiaApp.repository;
+using System.CodeDom;
 
 class GerenciadorEspaco {
     public List<Espaco> Lista_espacos {get; set;}
     private Calendario Calendario;
-    private EspacoEventoRepository espacoEventoRepository;
-    public GerenciadorEspaco(EspacoEventoRepository espacoEventoRepository) {
-        this.espacoEventoRepository = espacoEventoRepository;
+    public GerenciadorEspaco() {
         Lista_espacos = new List<Espaco>(){
             new Espaco("g", 50,  8000  , EspacoTipoEnum.MAX50 ),
             new Espaco("a", 100, 10000 , EspacoTipoEnum.MAX100),
@@ -28,7 +26,7 @@ class GerenciadorEspaco {
     }
 
     public Espaco ReservarEspaco(int qntConvidados){
-        List<Espaco> espacosComCapacidade = espacoEventoRepository.GetEspacoEventoPorConvidados(qntConvidados);
+        List<Espaco> espacosComCapacidade = EncontrarEspacos(qntConvidados);
         DateTime possivelData = Calendario.Prox_date();
         int i=0;
 

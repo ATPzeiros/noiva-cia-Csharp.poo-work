@@ -1,5 +1,6 @@
 using NoivaCiaApp.model;
 using NoivaCiaApp.repository;
+using SQLitePCL;
 
 class GerenciadorEvento
 {
@@ -12,7 +13,7 @@ class GerenciadorEvento
         repository.SaveCasamento(casamento);
     }
     public static Espaco ObterEspaço(){
-        GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco(RepositoryInjector.CreateEspacoEventoRepository());
+        GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
 
         Console.Write("Quantidade de convidados: ");
         int quantidadeConvidados = int.Parse(Console.ReadLine() ?? "0");
@@ -64,5 +65,14 @@ class GerenciadorEvento
              List = items.getPremierList();
         }
         return List;
+    }
+
+    public bool ExcluirEventoPorData(){
+        Console.Write("Data do evento a ser excluido: ");
+        var data = Console.ReadLine();
+
+        
+
+        return false;
     }
 }

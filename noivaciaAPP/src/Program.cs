@@ -76,8 +76,8 @@ namespace NoivaCiaApp
 
                         if (posicaoAtual == 0)
                         {
-                            Console.WriteLine("IMPLEMENTANDO");
-                            Console.ReadKey();
+                            GerenciadorEvento GE = new GerenciadorEvento();
+                            GE.ExcluirEventoPorData();
                         }
 
                         else if (posicaoAtual == 1)
