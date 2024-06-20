@@ -23,38 +23,22 @@ namespace NoivaCiaApp.repository
             this.database = database;
         }
 
-        public List<Casamento> GetCasamentoPorTipo(TipoEventoEnum tipo)
-        {
-            try
-            {
-                return database
-                    .GetEntities<FestaEntity>()
-                    .Where(item => item.Categoria == (int)tipo)
-                    .Select(item => mapper?.MapToModel(item))
-                    .OfType<Casamento>()
-                    .ToList();
-            }
-            catch
-            {
-                return new List<Casamento>();
-            }
-        }
         public bool SaveFesta(Festa festa, float valorTotal)
         {
             var entity = mapper.MapToEntity(festa);
             entity.Valor = valorTotal;
-            entity.Data = festa.Espaco.Data;
+            entity.Data = festa?.Espaco?.Data;
 
             database.SaveEntity(entity);
 
-            List<ItemsFestaEntity> items = festa.Items.Select(item =>
+            List<ItemsFestaEntity> items = festa?.Items.Select(item =>
                 new ItemsFestaEntity()
                 {
                     Fk_Festa = entity.Id,
                     Fk_Item = item.Id,
                     Quantidade = item.QuantidadeDoItem
                 }
-            ).ToList();
+            ).ToList() ?? new List<ItemsFestaEntity>();
             database.SaveEntities(items);
 
             return true;
