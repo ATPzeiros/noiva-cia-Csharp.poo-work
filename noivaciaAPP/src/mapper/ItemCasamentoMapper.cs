@@ -24,7 +24,7 @@ namespace NoivaCiaApp.mapper
                 Name = itemCasamento.Name,
                 Value = itemCasamento.Price,
                 TipoCasamento = (int)itemCasamento.TipoCasamento,
-                TipoItem = (int)itemCasamento.TipoItem
+                TipoItem = (int)itemCasamento.TipoItem,
             };
         }
     }

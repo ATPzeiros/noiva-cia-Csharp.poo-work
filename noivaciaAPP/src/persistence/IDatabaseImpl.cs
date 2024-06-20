@@ -23,6 +23,11 @@ class IDatabaseImpl : IDatabase
         return dbConnection.Table<T>().ToList();
     }
 
+    public T GetEntity<T>() where T : Entity, new()
+    {
+        return dbConnection.Table<T>().First();
+    }
+
     public int SaveEntities<T>(List<T> items) where T : Entity, new()
     {
         dbConnection.CreateTable<T>();

@@ -10,16 +10,19 @@ namespace NoivaCiaApp.repository
 
         private readonly IMapper<Festa, FestaEntity> mapper;
         private readonly IMapper<Espaco, EspacoEntity> espacoMapper;
+        private readonly IMapper<ItemFesta, ItemFestaEntity> itemMapper;
         private readonly IDatabase database;
 
         public FestaRepository(
             IMapper<Festa, FestaEntity> mapper,
             IMapper<Espaco, EspacoEntity> espacoMapper,
+            IMapper<ItemFesta, ItemFestaEntity> itemMapper,
             IDatabase database
         )
         {
             this.mapper = mapper;
             this.espacoMapper = espacoMapper;
+            this.itemMapper = itemMapper;
             this.database = database;
         }
 
@@ -59,22 +62,37 @@ namespace NoivaCiaApp.repository
                     {
                         EspacoEntity? espacoEntity = database.GetEntities<EspacoEntity>().Find(item => item.Id == festa.FkEspaco);
                         var f = mapper.MapToModel(festa);
-                        if(espacoEntity != null){
+                        if (espacoEntity != null)
+                        {
                             Espaco espaco = espacoMapper.MapToModel(espacoEntity);
-                            if(espaco != null){
-                               f.Espaco = espaco;
+                            if (espaco != null)
+                            {
+                                f.Espaco = espaco;
                             }
                         }
-                        
+
                         return f;
                     })
                     .ToList();
             }
             catch (Exception e)
             {
-                Console.WriteLine("Erro: " + e);
                 return new List<Festa>();
             }
+        }
+
+        public List<ItemFesta> GetItemsDaFesta(int IdFesta)
+        {
+            return database
+            .GetEntities<ItemsFestaEntity>()
+            .Where(item => item.Fk_Festa == IdFesta)
+            .Select(item =>
+            {
+                var i = database.GetEntities<ItemFestaEntity>().Where(i => i.Id ==item.Fk_Item).First();
+                var itemFesta = itemMapper.MapToModel(i);
+                itemFesta.QuantidadeDoItem = item.Quantidade;
+                return itemFesta;
+            }).ToList();
         }
     }
 }

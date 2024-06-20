@@ -20,6 +20,7 @@ static class RepositoryInjector{
         return new FestaRepository(
             mapper: new FestaMapper(),
             espacoMapper: new EspacoMapper(),
+            itemMapper: new ItemCasamentoMapper(),
             database: new IDatabaseImpl()
         );
     }

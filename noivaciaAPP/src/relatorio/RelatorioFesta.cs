@@ -13,12 +13,12 @@ class RelatorioFesta : IRelatorio
         Console.WriteLine(" ");
         Console.WriteLine("-------------------XX-------------------");
         Console.WriteLine(festa.Categoria + " " + festa.Tipo);
-        Console.WriteLine("| Espaco: " + festa.Espaco?.Nome + " | Espaco id: " + festa.Espaco?.Id + " | Data: " + festa.Espaco?.Data.ToShortDateString());
+        Console.WriteLine($"R$ {festa?.Espaco?.Valor}\t"+"| Espaco: " + festa.Espaco?.Nome + " | Espaco id: " + festa.Espaco?.Id + " | Data: " + festa.Espaco?.Data.ToShortDateString());
         Console.WriteLine(" ");
         festa.Items.ForEach(item => {
-            Console.WriteLine(item.Name + ": " + item.QuantidadeDoItem);
+            Console.WriteLine($"{item.QuantidadeDoItem} x R${item.Price} = R${item.QuantidadeDoItem*item.Price}\t" + item.Name + ":" + item.QuantidadeDoItem);
         });
-        Console.WriteLine("Valor total: " + CalcularValorTotal(festa));
+        Console.WriteLine("Valor total: R$" + CalcularValorTotal(festa));
         Console.WriteLine("-------------------XX-------------------");
         Console.WriteLine(" ");
         Console.ReadKey();

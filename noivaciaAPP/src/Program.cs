@@ -12,8 +12,8 @@ namespace NoivaCiaApp
             Console.BackgroundColor = ConsoleColor.Black;
 
             string[] primeiroMenu = { "Marcar Evento", "Ver Evento", "Excluir Evento", "SAIR" };
-            string[] subMenuVerCasamentos = { "Ver Evento Por Data", "Ver Evento Por Quantidade Convidados", "Voltar" };
-            string[] subMenuExcluirCasamentos = { "Por Data", "Por Convidados", "Voltar" };
+            string[] subMenuVerCasamentos = { "Ver Eventos", "Voltar" };
+            string[] subMenuExcluirCasamentos = { "Por ID", "Voltar" };
             string[] menuAtual = primeiroMenu;
             string cabecalho = "Inicio";
 
@@ -82,16 +82,21 @@ namespace NoivaCiaApp
                                 repository: RepositoryInjector.CreateFestaRepository(),
                                 relatorio: RelatorioInjection.GenerateFestaRelatorio()
                             );
-                            Festa festa = InputReader.SelecionarDaLista("Selecione a festa", GE.ListaDeFestas());
-                            GE.GerarResumo(festa);
+                            List<Festa> festas = GE.ListaDeFestas();
+
+                            if (festas.Count != 0)
+                            {
+                                Festa festa = InputReader.SelecionarDaLista("Selecione a festa", festas);
+                                GE.GerarResumoDetalhado(festa);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Nenhum evento cadastrado.\nPressione qualquer tecla...");
+                            }
+                            Console.ReadKey();
                         }
 
                         else if (posicaoAtual == 1)
-                        {
-                            Console.WriteLine("IMPLEMENTANDO");
-                            Console.ReadKey();
-                        }
-                        else if (posicaoAtual == 2)
                         {
                             menuAtual = primeiroMenu;
                             subMenu = 0;
@@ -107,24 +112,30 @@ namespace NoivaCiaApp
                                 repository: RepositoryInjector.CreateFestaRepository(),
                                 relatorio: RelatorioInjection.GenerateFestaRelatorio()
                             );
-                            // GE.ListaDeFestas().ForEach(f => Console.WriteLine($"{f.Id}\t{f?.Espaco?.Nome}\t{f?.Date.ToShortDateString()}"));
-                            // Console.WriteLine("Informe o id da festa: ");
-                            Festa festa = InputReader.SelecionarDaLista("Selecione a festa", GE.ListaDeFestas());
-                            GE.ExcluirEventoPorId(festa.Id);
+                            List<Festa> festas = GE.ListaDeFestas();
+
+                            if (festas.Count != 0)
+                            {
+                                Festa festa = InputReader.SelecionarDaLista("Selecione a festa", festas);
+                                if (GE.ExcluirEventoPorId(festa.Id))
+                                {
+                                    Console.WriteLine("Deledado com sucesso!\nPressione qualquer tecla...");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Tivemos um erro. Tente novamente.");
+                                }
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Nenhum evento cadastrado.\nPressione qualquer tecla...");
+                            }
+
                             Console.ReadKey();
                         }
 
                         else if (posicaoAtual == 1)
-                        {
-                            GerenciadorEvento gEvento = new(
-                                repository: RepositoryInjector.CreateFestaRepository(),
-                                relatorio: RelatorioInjection.GenerateFestaRelatorio()
-                            );
-
-                            Console.WriteLine("IMPLEMENTANDO");
-                            Console.ReadKey();
-                        }
-                        else if (posicaoAtual == 2)
                         {
                             menuAtual = primeiroMenu;
                             subMenu = 0;
