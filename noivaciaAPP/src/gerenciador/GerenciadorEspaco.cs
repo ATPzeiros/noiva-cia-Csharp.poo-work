@@ -1,7 +1,7 @@
 using NoivaCiaApp.repository;
 
 class GerenciadorEspaco {
-    private List<Espaco> Lista_espacos {get; set;}
+    public List<Espaco> Lista_espacos {get; set;}
     private Calendario Calendario;
     private EspacoEventoRepository espacoEventoRepository;
     public GerenciadorEspaco(EspacoEventoRepository espacoEventoRepository) {
@@ -38,6 +38,7 @@ class GerenciadorEspaco {
 
             if(!espacoLocado){
                 espaco.Datas_Locadas.Add(possivelData);
+                espaco.Data=  possivelData;
                 espaco.qntConvidados = qntConvidados;
                 return espaco;
             } else {
