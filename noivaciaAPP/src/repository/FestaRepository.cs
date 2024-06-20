@@ -9,13 +9,17 @@ namespace NoivaCiaApp.repository
     {
 
         private readonly IMapper<Festa, FestaEntity> mapper;
+        private readonly IMapper<Espaco, EspacoEntity> espacoMapper;
         private readonly IDatabase database;
 
         public FestaRepository(
-            IMapper<Festa, FestaEntity> mapper, 
+            IMapper<Festa, FestaEntity> mapper,
+            IMapper<Espaco, EspacoEntity> espacoMapper,
             IDatabase database
-        ) {
+        )
+        {
             this.mapper = mapper;
+            this.espacoMapper = espacoMapper;
             this.database = database;
         }
 
@@ -35,23 +39,53 @@ namespace NoivaCiaApp.repository
                 return new List<Casamento>();
             }
         }
-        public bool SaveFesta(Festa festa, float valorTotal){
+        public bool SaveFesta(Festa festa, float valorTotal)
+        {
             var entity = mapper.MapToEntity(festa);
             entity.Valor = valorTotal;
             entity.Data = festa.Espaco.Data;
 
             database.SaveEntity(entity);
 
-            List<ItemsFestaEntity> items = festa.Items.Select(item => 
-                new ItemsFestaEntity(){
+            List<ItemsFestaEntity> items = festa.Items.Select(item =>
+                new ItemsFestaEntity()
+                {
                     Fk_Festa = entity.Id,
                     Fk_Item = item.Id,
                     Quantidade = item.QuantidadeDoItem
                 }
-            ).ToList(); 
+            ).ToList();
             database.SaveEntities(items);
 
             return true;
+        }
+
+        public bool DeleteFesta(int id)
+        {
+            return database.DeleteById<Festa>(id) > 0;
+        }
+
+        public List<Festa> GetAllFestas()
+        {
+            try
+            {
+                return database
+                    .GetEntities<FestaEntity>()
+                    .Select(mapper.MapToModel)
+                    .Select(festa =>
+                    {
+                        EspacoEntity? espaco = database.GetEntities<EspacoEntity>().Find(item => item.Id == festa.Id);
+                        if(espaco != null){
+                            festa.Espaco = espacoMapper.MapToModel(espaco);
+                        }
+                        return festa;
+                    })
+                    .ToList();
+            }
+            catch
+            {
+                return new List<Festa>();
+            }
         }
     }
 }

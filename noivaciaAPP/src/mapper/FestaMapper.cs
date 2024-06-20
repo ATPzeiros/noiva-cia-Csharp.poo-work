@@ -8,7 +8,7 @@ class FestaMapper : IMapper<Festa, FestaEntity>
     {
         return new FestaEntity(){
             Id = festa.Id,
-            FkEspaco  = festa.Espaco.Id,
+            FkEspaco  = festa?.Espaco?.Id ?? 0,
             Categoria = (int)festa.Categoria,
             TipoEvento  = (int)festa.Tipo,
             Valor = 0f,
@@ -17,8 +17,12 @@ class FestaMapper : IMapper<Festa, FestaEntity>
         };
     }
 
-    public Festa MapToModel(FestaEntity casamento)
+    public Festa MapToModel(FestaEntity festa)
     {
-        throw new NotImplementedException();
+        return new Festa(
+            Tipo: (TipoEventoEnum)festa.TipoEvento,
+            Categoria: (TipoCategoria)festa.Categoria,
+            QuantidadeConvidados: festa.QntConvidados
+        );
     }
 }

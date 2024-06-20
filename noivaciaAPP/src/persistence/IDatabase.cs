@@ -9,5 +9,7 @@ namespace NoivaCiaApp.persistence
         public int SaveEntities<T>(List<T> items) where T: Entity, new();
 
         public int SaveEntity<T>(T item) where T: Entity, new();
+
+        public int DeleteById<T>(int id);
     }
 }

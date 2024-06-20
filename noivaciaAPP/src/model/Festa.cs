@@ -3,7 +3,7 @@ using NoivaCiaApp.model;
 public class Festa: Model
 {
     public int Id {get;set;}
-    public Espaco Espaco {get;set;}
+    public Espaco? Espaco {get;set;}
 
     public TipoEventoEnum Tipo {get;set;}
 
@@ -13,11 +13,17 @@ public class Festa: Model
 
     public List<ItemFesta> Items {get;set;} = new List<ItemFesta>();
 
-    public Festa(Espaco Espaco, TipoEventoEnum Tipo, TipoCategoria Categoria, int QuantidadeConvidados, List<ItemFesta> Items){
+    public Festa(Espaco? Espaco, TipoEventoEnum Tipo, TipoCategoria Categoria, int QuantidadeConvidados, List<ItemFesta> Items){
         this.Espaco = Espaco;
         this.Tipo = Tipo;
         this.Categoria = Categoria;
         this.QuantidadeConvidados = QuantidadeConvidados;
         this.Items = Items;
+    }
+
+    public Festa(TipoEventoEnum Tipo, TipoCategoria Categoria, int QuantidadeConvidados){
+        this.Tipo = Tipo;
+        this.Categoria = Categoria;
+        this.QuantidadeConvidados = QuantidadeConvidados;
     }
 }

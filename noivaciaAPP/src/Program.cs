@@ -82,7 +82,7 @@ namespace NoivaCiaApp
 
                             List<ItemFesta> itemsObrigatorios = gITem.GetItemsObrigatorios(categoria, tipoEvento);
 
-                            Festa festa = new Festa(
+                            Festa festa = new (
                                 espaco,
                                 tipoEvento,
                                 categoria,
@@ -90,7 +90,6 @@ namespace NoivaCiaApp
                                 itemsObrigatorios.Concat(bebidas).ToList()
                             );
                             gEvento.GerarResumo(festa);
-                            Console.ReadKey();
                             bool confirm = InputReader.SelecionarDaLista("Confirmar reserva?", new List<bool>(){true, false});
                             if(confirm){
                                 gEvento.MarcarEvento(festa);

@@ -12,6 +12,11 @@ class IDatabaseImpl : IDatabase
         dbConnection = DatabaseConnection.GetDatabase();
     }
 
+    public int DeleteById<T>(int id)
+    {
+        return dbConnection.Delete<T>(id);
+    }
+
     public List<T> GetEntities<T>() where T : Entity, new()
     {
         dbConnection.CreateTable<T>();
@@ -29,4 +34,5 @@ class IDatabaseImpl : IDatabase
         dbConnection.CreateTable<T>();
         return dbConnection.Insert(item);
     }
+    
 }
