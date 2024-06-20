@@ -46,7 +46,7 @@ namespace NoivaCiaApp.repository
 
         public bool DeleteFesta(int id)
         {
-            return database.DeleteById<Festa>(id) > 0;
+            return database.DeleteById<FestaEntity>(id) > 0;
         }
 
         public List<Festa> GetAllFestas()

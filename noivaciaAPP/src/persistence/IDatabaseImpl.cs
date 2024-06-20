@@ -12,7 +12,7 @@ class IDatabaseImpl : IDatabase
         dbConnection = DatabaseConnection.GetDatabase();
     }
 
-    public int DeleteById<T>(int id)
+    public int DeleteById<T>(int id) where T : Entity, new()
     {
         return dbConnection.Delete<T>(id);
     }

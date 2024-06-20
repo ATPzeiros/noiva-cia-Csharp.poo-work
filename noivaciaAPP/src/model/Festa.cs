@@ -30,4 +30,9 @@ public class Festa: Model
         this.QuantidadeConvidados = QuantidadeConvidados;
         this.Date = Date;
     }
+
+    public override string ToString()
+    {
+        return $"{Id}\t{Espaco?.Nome}\t{Date.ToShortDateString()}";
+    }
 }

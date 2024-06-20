@@ -10,18 +10,17 @@ class RelatorioFesta : IRelatorio
 
     public void GerarRelatorio(Festa festa)
     {
-        Console.WriteLine("Espaco: " + festa.Espaco?.Nome);
-        Console.WriteLine("Espaco id: " + festa.Espaco?.Id);
-        Console.WriteLine("Data: " + festa.Espaco?.Nome);
-        Console.WriteLine(festa.Categoria);
-        Console.WriteLine(festa.Tipo);
+        Console.WriteLine(" ");
+        Console.WriteLine("-------------------XX-------------------");
+        Console.WriteLine(festa.Categoria + " " + festa.Tipo);
+        Console.WriteLine("| Espaco: " + festa.Espaco?.Nome + " | Espaco id: " + festa.Espaco?.Id + " | Data: " + festa.Espaco?.Data.ToShortDateString());
+        Console.WriteLine(" ");
         festa.Items.ForEach(item => {
-            Console.WriteLine(item.Name);
-            Console.WriteLine(item.QuantidadeDoItem);
+            Console.WriteLine(item.Name + ": " + item.QuantidadeDoItem);
         });
-
         Console.WriteLine("Valor total: " + CalcularValorTotal(festa));
-
+        Console.WriteLine("-------------------XX-------------------");
+        Console.WriteLine(" ");
         Console.ReadKey();
     }
 }
