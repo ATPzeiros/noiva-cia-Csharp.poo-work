@@ -1,5 +1,5 @@
 public enum EventoTipoEnum {
-    STANDART, 
-    LUXO, 
-    PREMIER
+    STANDART = 1, 
+    LUXO = 2,
+    PREMIER = 3,
 }

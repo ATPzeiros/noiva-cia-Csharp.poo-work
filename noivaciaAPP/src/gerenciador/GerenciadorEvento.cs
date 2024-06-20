@@ -1,13 +1,15 @@
 using NoivaCiaApp.model;
+using NoivaCiaApp.repository;
 
 class GerenciadorEvento
 {
+    static FestaRepository repository = RepositoryInjector.CreateFestaRepository();
+    
     public static void MarcarEvento(){
         Espaco espacoEvento = ObterEspaço();
         EventoTipoEnum tipoEvento = ObterTipoEvento();
-        var listaConformeTipoEvento = GetListaCasamento(tipoEvento);
-
-        Casamento casamento = new Casamento(espacoEvento, tipoEvento, listaConformeTipoEvento);
+        Casamento casamento = new Casamento(espacoEvento, tipoEvento);
+        repository.SaveCasamento(casamento);
     }
     public static Espaco ObterEspaço(){
         GerenciadorEspaco gerenciadorEspaco = new GerenciadorEspaco();
@@ -43,10 +45,10 @@ class GerenciadorEvento
                     tipoEventoEscolhido = EventoTipoEnum.PREMIER;
                     break;
             }
+            return tipoEventoEscolhido;
         }
         while (opcao != 1 || opcao != 2 || opcao != 3);
 
-        return tipoEventoEscolhido;
     }
     
     public static List<ItemCasamento> GetListaCasamento(EventoTipoEnum TipoEvento){

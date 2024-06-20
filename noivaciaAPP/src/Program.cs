@@ -10,8 +10,8 @@ namespace NoivaCiaApp
         {
             Console.BackgroundColor = ConsoleColor.Black;
 
-            string[] primeiroMenu = { "Marcar Casamento", "Ver Casamentos", "Excluir Casamentos", "SAIR" };
-            string[] subMenuVerCasamentos = { "Ver Casamentos Por Data", "Ver Casamento Por Quantidade Convidados", "Voltar" };
+            string[] primeiroMenu = { "Marcar Evento", "Ver Evento", "Excluir Evento", "SAIR" };
+            string[] subMenuVerCasamentos = { "Ver Evento Por Data", "Ver Evento Por Quantidade Convidados", "Voltar" };
             string[] subMenuExcluirCasamentos = { "Por Data", "Por Convidados", "Voltar" };
             string[] menuAtual = primeiroMenu;
             string cabecalho = "Inicio";

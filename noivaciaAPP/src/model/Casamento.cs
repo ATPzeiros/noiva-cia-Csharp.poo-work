@@ -1,30 +1,18 @@
 using NoivaCiaApp.model;
 
 public class Casamento : Model {
+    public int Id { get; set;}
     public Espaco EspacoCasamento {get; set;}
     public EventoTipoEnum TipoCasamento {get;set;}
 
     public List<ItemCasamento> ItemsDoCasamento {get; set;}
 
-    public static float PrecoFinalCasamento {get;set;}
+    public float PrecoFinalCasamento {get;set;}
 
-    public Casamento(Espaco EspacoCasamento, EventoTipoEnum TipoCasamento, List<ItemCasamento> lista){
+    public Casamento(Espaco EspacoCasamento, EventoTipoEnum TipoCasamento){
         this.EspacoCasamento = EspacoCasamento;
         this.TipoCasamento = TipoCasamento;
-        ItemsDoCasamento = lista;
-        foreach(var i in ItemsDoCasamento){
-            if(i.TipoItem == ItemTipoEnum.BASICO){
-                 i.QuantidadeDoItem=EspacoCasamento.CapacidadeMax;
-            }
-            else if(i.TipoItem == ItemTipoEnum.COMIDA){
-                 i.QuantidadeDoItem=EspacoCasamento.qntConvidados;
-            }
-            else if(i.TipoItem == ItemTipoEnum.BEBIDA){
-                 Console.WriteLine("Escolha A quantidade dos seguintes items");
-                 Console.WriteLine(i.Name);
-                 i.QuantidadeDoItem=int.Parse(Console.ReadLine() ?? "0");
-            }
-        }
+        preencherListaCasamento(TipoCasamento);
     }
 
     public double ValorTotalCasamento(){
@@ -43,5 +31,22 @@ public class Casamento : Model {
 
         PrecoFinalCasamento += EspacoCasamento.Valor;
         return PrecoFinalCasamento;
+    }
+    private void preencherListaCasamento(EventoTipoEnum tipo){
+        ItemsDoCasamento = GerenciadorEvento.GetListaCasamento(tipo);
+
+        foreach(var i in ItemsDoCasamento){
+            if(i.TipoItem == ItemTipoEnum.BASICO){
+                 i.QuantidadeDoItem=EspacoCasamento.CapacidadeMax;
+            }
+            else if(i.TipoItem == ItemTipoEnum.COMIDA){
+                 i.QuantidadeDoItem=EspacoCasamento.qntConvidados;
+            }
+            else if(i.TipoItem == ItemTipoEnum.BEBIDA){
+                 Console.WriteLine("Escolha A quantidade dos seguintes items");
+                 Console.WriteLine(i.Name);
+                 i.QuantidadeDoItem=int.Parse(Console.ReadLine() ?? "0");
+            }
+        }
     }
 }

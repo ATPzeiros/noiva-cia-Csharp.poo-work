@@ -1,18 +1,21 @@
 using NoivaCiaApp.entity;
 using SQLite;
 
-class FestaEntity : Entity
+ [Table("FestaEntity")]
+public class FestaEntity : Entity
 {
-    [PrimaryKey, AutoIncrement]
+    [PrimaryKey]
     [Column("id")]
     public override int Id { get; set; }
 
     [Column("fk_espaco")]
-    int FkEspaco { get; set; }
+    public int FkEspaco { get; set; }
     [Column("categoria")]
-    int Categoria { get; set; }
+    public int Categoria { get; set; }
     [Column("tipo_evento")]
-    int TipoEvento { get; set; }
-    [Column("qnt_convidados")]
-    int QuantidadeConvidados { get; set; }
+    public int TipoEvento { get; set; }
+    [Column("valor")]
+    public float Valor { get; set; }
+    [Column("data")]
+    public DateTime ? Data{get; set;}
 }

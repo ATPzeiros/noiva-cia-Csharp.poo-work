@@ -1,7 +1,7 @@
 using NoivaCiaApp.entity;
 using SQLite;
 
-class EspacoEntity : Entity
+public class EspacoEntity : Entity
 {
     [PrimaryKey, AutoIncrement]
     [Column("id")]
