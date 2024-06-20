@@ -9,20 +9,22 @@ class FestaMapper : IMapper<Festa, FestaEntity>
         return new FestaEntity(){
             Id = festa.Id,
             FkEspaco  = festa?.Espaco?.Id ?? 0,
-            Categoria = (int)festa.Categoria,
-            TipoEvento  = (int)festa.Tipo,
+            Categoria = (int)(festa?.Categoria ?? 0),
+            TipoEvento  = (int)(festa?.Tipo ?? 0),
             Valor = 0f,
-            QntConvidados = festa.QuantidadeConvidados,
-            Data = festa.Espaco.Data,
+            QntConvidados = festa?.QuantidadeConvidados ?? 0,
+            Data = festa?.Espaco?.Data,
         };
     }
 
     public Festa MapToModel(FestaEntity festa)
     {
         return new Festa(
+            Id: festa.Id,
             Tipo: (TipoEventoEnum)festa.TipoEvento,
             Categoria: (TipoCategoria)festa.Categoria,
-            QuantidadeConvidados: festa.QntConvidados
+            QuantidadeConvidados: festa.QntConvidados,
+            Date: festa.Data ?? DateTime.Now
         );
     }
 }

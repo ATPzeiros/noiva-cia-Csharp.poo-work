@@ -24,6 +24,6 @@ class GerenciadorEvento
     }
 
     public void ExcluirEventoPorData(){
-        
+        repository.GetAllFestas().ForEach(f => Console.WriteLine($"{f.Id}\t{f?.Espaco?.Nome}\t{f?.Date.ToShortDateString()}"));
     }
 }

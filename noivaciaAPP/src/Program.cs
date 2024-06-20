@@ -109,7 +109,7 @@ namespace NoivaCiaApp
                             menuAtual = subMenuExcluirCasamentos;
                             subMenu = 2;
                             cabecalho = "Exlcuir Casamentos";
-                            
+
                             posicaoAtual = 0;
                         }
                         else if (posicaoAtual == 3)
@@ -130,6 +130,7 @@ namespace NoivaCiaApp
                                 relatorio: RelatorioInjection.GenerateFestaRelatorio()
                             );
                             GE.ExcluirEventoPorData();
+                            Console.ReadKey();
                         }
 
                         else if (posicaoAtual == 1)
@@ -155,6 +156,12 @@ namespace NoivaCiaApp
 
                         else if (posicaoAtual == 1)
                         {
+                            GerenciadorEvento gEvento = new(
+                                repository: RepositoryInjector.CreateFestaRepository(),
+                                relatorio: RelatorioInjection.GenerateFestaRelatorio()
+                            );
+
+                            gEvento.ExcluirEventoPorData();
                             Console.WriteLine("IMPLEMENTANDO");
                             Console.ReadKey();
                         }
