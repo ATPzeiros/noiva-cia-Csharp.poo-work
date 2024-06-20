@@ -129,8 +129,8 @@ namespace NoivaCiaApp
                                 repository: RepositoryInjector.CreateFestaRepository(),
                                 relatorio: RelatorioInjection.GenerateFestaRelatorio()
                             );
-                            GE.ExcluirEventoPorData();
-                            Console.ReadKey();
+                            Festa festa = InputReader.SelecionarDaLista("Selecione a festa", GE.ListaDeFestas());
+                            GE.GerarResumo(festa);
                         }
 
                         else if (posicaoAtual == 1)
@@ -150,7 +150,14 @@ namespace NoivaCiaApp
                     {
                         if (posicaoAtual == 0)
                         {
-                            Console.WriteLine("IMPLEMENTANDO");
+                            GerenciadorEvento GE = new GerenciadorEvento(
+                                repository: RepositoryInjector.CreateFestaRepository(),
+                                relatorio: RelatorioInjection.GenerateFestaRelatorio()
+                            );
+                            // GE.ListaDeFestas().ForEach(f => Console.WriteLine($"{f.Id}\t{f?.Espaco?.Nome}\t{f?.Date.ToShortDateString()}"));
+                            // Console.WriteLine("Informe o id da festa: ");
+                            Festa festa = InputReader.SelecionarDaLista("Selecione a festa", GE.ListaDeFestas());
+                            GE.ExcluirEventoPorId(festa.Id);
                             Console.ReadKey();
                         }
 
@@ -161,7 +168,6 @@ namespace NoivaCiaApp
                                 relatorio: RelatorioInjection.GenerateFestaRelatorio()
                             );
 
-                            gEvento.ExcluirEventoPorData();
                             Console.WriteLine("IMPLEMENTANDO");
                             Console.ReadKey();
                         }

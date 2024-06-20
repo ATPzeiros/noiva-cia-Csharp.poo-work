@@ -23,7 +23,11 @@ class GerenciadorEvento
         relatorio.GerarRelatorio(festa);
     }
 
-    public void ExcluirEventoPorData(){
-        repository.GetAllFestas().ForEach(f => Console.WriteLine($"{f.Id}\t{f?.Espaco?.Nome}\t{f?.Date.ToShortDateString()}"));
+    public void ExcluirEventoPorId(int idFesta){
+        repository.DeleteFesta(idFesta);
+    }
+
+    public List<Festa> ListaDeFestas(){
+        return repository.GetAllFestas().ToList();
     }
 }
