@@ -22,6 +22,8 @@ class EspacoRepository
 
     public List<Espaco> EncontrarMenorEspaco(int qntConvidados)
     {
+        try
+        {
             List<Espaco> espacos = database.GetEntities<EspacoEntity>().Select(mapper.MapToModel).ToList();
 
             if (qntConvidados > espacos?.MaxBy(espaco => espaco.CapacidadeMax)?.CapacidadeMax)
@@ -34,9 +36,24 @@ class EspacoRepository
                 ?.FindAll(espaco => tipo == espaco.Tipo)
                 .OfType<Espaco>()
                 .ToList() ?? new List<Espaco>();
+        }
+        catch
+        {
+            return new List<Espaco>();
+        }
+
     }
 
-    public bool FestaLocadaParaDia(int EspacoId, DateTime date){
-        return database.GetEntities<FestaEntity>().Where(item => item.FkEspaco == EspacoId && item.Data == date).Any();
+    public bool FestaLocadaParaDia(int EspacoId, DateTime date)
+    {
+        try
+        {
+            return database.GetEntities<FestaEntity>().Where(item => item.FkEspaco == EspacoId && item.Data == date).Any();
+        }
+        catch
+        {
+            return false;
+        }
+
     }
 }

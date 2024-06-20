@@ -15,7 +15,6 @@ class MarcarFestaView : IView
             relatorio: RelatorioInjection.GenerateFestaRelatorio()
         );
 
-        //Console.Write("Informe a quantidade de pessoas: ");
         int qntPessoas = InputReader.LerIntZeroOuMaiorTeclado(text: "Informe a quantidade de pessoas: ");
 
         Espaco? espaco = gEspaco.EncontrarEspaco(qntPessoas);

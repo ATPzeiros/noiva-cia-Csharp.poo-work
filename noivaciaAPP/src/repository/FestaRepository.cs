@@ -28,28 +28,44 @@ namespace NoivaCiaApp.repository
 
         public bool SaveFesta(Festa festa, float valorTotal)
         {
-            var entity = mapper.MapToEntity(festa);
-            entity.Valor = valorTotal;
-            entity.Data = festa?.Espaco?.Data;
+            try
+            {
+                var entity = mapper.MapToEntity(festa);
+                entity.Valor = valorTotal;
+                entity.Data = festa?.Espaco?.Data;
 
-            database.SaveEntity(entity);
+                database.SaveEntity(entity);
 
-            List<ItemsFestaEntity> items = festa?.Items.Select(item =>
-                new ItemsFestaEntity()
-                {
-                    Fk_Festa = entity.Id,
-                    Fk_Item = item.Id,
-                    Quantidade = item.QuantidadeDoItem
-                }
-            ).ToList() ?? new List<ItemsFestaEntity>();
-            database.SaveEntities(items);
+                List<ItemsFestaEntity> items = festa?.Items.Select(item =>
+                    new ItemsFestaEntity()
+                    {
+                        Fk_Festa = entity.Id,
+                        Fk_Item = item.Id,
+                        Quantidade = item.QuantidadeDoItem
+                    }
+                ).ToList() ?? new List<ItemsFestaEntity>();
+                database.SaveEntities(items);
 
-            return true;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
         public bool DeleteFesta(int id)
         {
-            return database.DeleteById<FestaEntity>(id) > 0;
+            try
+            {
+                return database.DeleteById<FestaEntity>(id) > 0;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
         public List<Festa> GetAllFestas()
@@ -75,7 +91,7 @@ namespace NoivaCiaApp.repository
                     })
                     .ToList();
             }
-            catch (Exception e)
+            catch 
             {
                 return new List<Festa>();
             }
@@ -83,16 +99,23 @@ namespace NoivaCiaApp.repository
 
         public List<ItemFesta> GetItemsDaFesta(int IdFesta)
         {
-            return database
-            .GetEntities<ItemsFestaEntity>()
-            .Where(item => item.Fk_Festa == IdFesta)
-            .Select(item =>
+            try
             {
-                var i = database.GetEntities<ItemFestaEntity>().Where(i => i.Id ==item.Fk_Item).First();
-                var itemFesta = itemMapper.MapToModel(i);
-                itemFesta.QuantidadeDoItem = item.Quantidade;
-                return itemFesta;
-            }).ToList();
+                return database
+                            .GetEntities<ItemsFestaEntity>()
+                            .Where(item => item.Fk_Festa == IdFesta)
+                            .Select(item =>
+                            {
+                                var i = database.GetEntities<ItemFestaEntity>().Where(i => i.Id == item.Fk_Item).First();
+                                var itemFesta = itemMapper.MapToModel(i);
+                                itemFesta.QuantidadeDoItem = item.Quantidade;
+                                return itemFesta;
+                            }).ToList();
+            }
+            catch
+            {
+                return new List<ItemFesta>();
+            }
         }
     }
 }
