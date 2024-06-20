@@ -2,9 +2,9 @@ class RelatorioFesta : IRelatorio
 {
     public float CalcularValorTotal(Festa festa)
     {
-        float valotTotal = festa.Espaco.Valor;
-        valotTotal += festa.Items.Where(item => item.TipoItem != ItemTipoEnum.BEBIDA).Select( item => item.Price ).Sum();
-        valotTotal += festa.Items.Where(item => item.TipoItem == ItemTipoEnum.BEBIDA).Select( item => item.Price * item.QuantidadeDoItem ).Sum();
+        float valotTotal = festa?.Espaco?.Valor ?? 0;
+        valotTotal += festa?.Items.Where(item => item.TipoItem != ItemTipoEnum.BEBIDA).Select( item => item.Price ).Sum() ?? 0;
+        valotTotal += festa?.Items.Where(item => item.TipoItem == ItemTipoEnum.BEBIDA).Select( item => item.Price * item.QuantidadeDoItem ).Sum() ?? 0;
         return valotTotal;
     }
 

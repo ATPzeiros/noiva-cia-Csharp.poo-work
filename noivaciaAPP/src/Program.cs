@@ -109,6 +109,7 @@ namespace NoivaCiaApp
                             menuAtual = subMenuExcluirCasamentos;
                             subMenu = 2;
                             cabecalho = "Exlcuir Casamentos";
+                            
                             posicaoAtual = 0;
                         }
                         else if (posicaoAtual == 3)
