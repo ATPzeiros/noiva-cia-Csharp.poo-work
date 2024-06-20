@@ -35,8 +35,11 @@ namespace NoivaCiaApp.repository
                 return new List<Casamento>();
             }
         }
-        public bool SaveCasamento(Festa festa){
-            return database.SaveEntity(mapper.MapToEntity(festa)) > 0;
+        public bool SaveFesta(Festa festa, float valorTotal){
+            var entity = mapper.MapToEntity(festa);
+            entity.Valor = valorTotal;
+            entity.Data = festa.Espaco.Data;
+            return database.SaveEntity(entity) > 0;
         }
     }
 }

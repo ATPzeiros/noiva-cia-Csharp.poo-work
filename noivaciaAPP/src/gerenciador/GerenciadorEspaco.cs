@@ -22,7 +22,8 @@ class GerenciadorEspaco
             while (true)
             {
                 var espaco = espacosComCapacidade[i % espacosComCapacidade.Count];
-                bool espacoLocado = espaco.Datas_Locadas.Any(data => data == possivelData);
+                // bool espacoLocado = espaco.Datas_Locadas.Any(data => data == possivelData);
+                bool espacoLocado = repository.FestaLocadaParaDia(espaco.Id, possivelData);
 
                 if (!espacoLocado)
                 {

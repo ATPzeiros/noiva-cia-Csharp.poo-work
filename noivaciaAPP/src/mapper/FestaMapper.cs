@@ -12,7 +12,8 @@ class FestaMapper : IMapper<Festa, FestaEntity>
             Categoria = (int)festa.Categoria,
             TipoEvento  = (int)festa.Tipo,
             Valor = 0f,
-            Data = new DateTime(),
+            QntConvidados = festa.QuantidadeConvidados,
+            Data = festa.Espaco.Data,
         };
     }
 

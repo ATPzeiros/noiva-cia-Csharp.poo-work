@@ -18,4 +18,6 @@ public class FestaEntity : Entity
     public float Valor { get; set; }
     [Column("data")]
     public DateTime ? Data{get; set;}
+    [Column("qnt_convidados")]
+    public int QntConvidados { get; set; }
 }

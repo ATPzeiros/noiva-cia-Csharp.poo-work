@@ -36,4 +36,8 @@ class EspacoRepository
                 .ToList() ?? new List<Espaco>();
        
     }
+
+    public bool FestaLocadaParaDia(int EspacoId, DateTime date){
+        return database.GetEntities<FestaEntity>().Where(item => item.FkEspaco == EspacoId && item.Data == date).Any();
+    }
 }
