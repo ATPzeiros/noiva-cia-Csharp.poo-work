@@ -71,14 +71,15 @@ namespace NoivaCiaApp.repository
             {
                 return database
                     .GetEntities<FestaEntity>()
-                    .Select(mapper.MapToModel)
                     .Select(festa =>
                     {
-                        EspacoEntity? espaco = database.GetEntities<EspacoEntity>().Find(item => item.Id == festa.Id);
+                        EspacoEntity? espacoEntity = database.GetEntities<EspacoEntity>().Find(item => item.Id == festa.FkEspaco);
+                        Espaco espaco = espacoMapper.MapToModel(espacoEntity);
+                        var f = mapper.MapToModel(festa);
                         if(espaco != null){
-                            festa.Espaco = espacoMapper.MapToModel(espaco);
+                            f.Espaco = espaco;
                         }
-                        return festa;
+                        return f;
                     })
                     .ToList();
             }

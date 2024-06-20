@@ -24,6 +24,6 @@ class GerenciadorEvento
     }
 
     public void ExcluirEventoPorData(){
-
+        
     }
 }
