@@ -39,7 +39,19 @@ namespace NoivaCiaApp.repository
             var entity = mapper.MapToEntity(festa);
             entity.Valor = valorTotal;
             entity.Data = festa.Espaco.Data;
-            return database.SaveEntity(entity) > 0;
+
+            database.SaveEntity(entity);
+
+            List<ItemsFestaEntity> items = festa.Items.Select(item => 
+                new ItemsFestaEntity(){
+                    Fk_Festa = entity.Id,
+                    Fk_Item = item.Id,
+                    Quantidade = item.QuantidadeDoItem
+                }
+            ).ToList(); 
+            database.SaveEntities(items);
+
+            return true;
         }
     }
 }

@@ -34,7 +34,6 @@ class EspacoRepository
                 ?.FindAll(espaco => tipo == espaco.Tipo)
                 .OfType<Espaco>()
                 .ToList() ?? new List<Espaco>();
-       
     }
 
     public bool FestaLocadaParaDia(int EspacoId, DateTime date){

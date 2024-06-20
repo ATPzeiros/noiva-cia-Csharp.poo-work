@@ -22,14 +22,15 @@ class GerenciadorEspaco
             while (true)
             {
                 var espaco = espacosComCapacidade[i % espacosComCapacidade.Count];
-                // bool espacoLocado = espaco.Datas_Locadas.Any(data => data == possivelData);
                 bool espacoLocado = repository.FestaLocadaParaDia(espaco.Id, possivelData);
 
                 if (!espacoLocado)
                 {
+                    Console.WriteLine("espaco encontrado: " + espaco.Nome + " id: " + espaco.Id);
+                    Console.ReadKey();
                     espaco.Datas_Locadas.Add(possivelData);
                     espaco.qntConvidados = qntConvidados;
-                    espaco.Data=  possivelData;
+                    espaco.Data = possivelData;
                     return espaco;
                 }
                 else

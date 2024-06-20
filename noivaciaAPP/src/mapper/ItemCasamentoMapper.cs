@@ -20,6 +20,7 @@ namespace NoivaCiaApp.mapper
         {
             return new()
             {
+                Id = itemCasamento.Id,
                 Name = itemCasamento.Name,
                 Value = itemCasamento.Price,
                 TipoCasamento = (int)itemCasamento.TipoCasamento,

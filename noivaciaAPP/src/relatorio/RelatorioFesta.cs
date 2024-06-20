@@ -11,6 +11,7 @@ class RelatorioFesta : IRelatorio
     public void GerarRelatorio(Festa festa)
     {
         Console.WriteLine("Eepaco: " + festa.Espaco?.Nome);
+        Console.WriteLine("Eepaco id: " + festa.Espaco?.Id);
         Console.WriteLine("Data: " + festa.Espaco?.Nome);
         Console.WriteLine(festa.Categoria);
         Console.WriteLine(festa.Tipo);

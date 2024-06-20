@@ -2,7 +2,7 @@ using SQLite;
 
 namespace NoivaCiaApp.entity
 {
-    [Table("ItemFestaEntity")]
+    [Table("ItemEntity")]
     public class ItemFestaEntity : Entity
     {
 

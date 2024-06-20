@@ -15,6 +15,7 @@ public class Espaco: EspacoBase {
     }
 
     public Espaco(int Id, string Nome, int CapacidadeMax, int Valor, EspacoTipoEnum Tipo){
+        this.Id = Id;
         this.Nome = Nome;
         this.CapacidadeMax = CapacidadeMax;
         this.Valor = Valor;
